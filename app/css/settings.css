@@ -3,122 +3,64 @@
    Lenovo UDS Marketplace
    =================================== */
 
-/* Header */
-.settings-header {
-  background: #2c3e50;
-  border-bottom: 1px solid #34495e;
-  padding: 12px 24px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* Header Styling - Match index page exactly using CSS variables */
+.ds-header {
+  background-color: rgb(var(--color-complementary-120)) !important;
 }
 
-.settings-header-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+.ds-header__container {
+  background-color: rgb(var(--color-complementary-120)) !important;
 }
 
-.header-logo a {
-  display: flex;
-  align-items: center;
+/* Header icon buttons - transparent background like index page */
+.ds-header__additional-button.ds-btn,
+.ds-header__additional-button.ds-btn--lg,
+.ds-header__additional-button.ds-btn--with-icon,
+.user-account-button.ds-btn {
+  background-color: transparent !important;
+  background: none !important;
+  border: none !important;
 }
 
-.logo-image {
-  height: 36px;
-  width: auto;
+/* Hover state matching index page - subtle light blue tint */
+.ds-header__additional-button.ds-btn:hover,
+.ds-header__additional-button.ds-btn--lg:hover,
+.ds-header__additional-button.ds-btn--with-icon:hover,
+.user-account-button.ds-btn:hover,
+button.ds-btn--with-icon:hover {
+  background-color: rgba(var(--daylight-20), .12) !important;
 }
 
-.page-title {
-  font-family: Lato, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0;
-  flex: 1;
-  text-align: center;
+/* Ensure SVG icons use CSS variable for white color */
+.ds-header__additional-button svg,
+.user-account-button svg,
+.ds-search__input + button svg {
+  fill: rgb(var(--color-neutral-text-10)) !important;
+  color: rgb(var(--color-neutral-text-10)) !important;
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* Search field styling to match index page */
+.ds-header__actions .ds-search--icon .ds-field__input,
+.ds-header__actions .ds-search--icon .ds-field__input:hover,
+.ds-header__actions .ds-search--icon .ds-field__input:focus {
+  background-color: rgb(var(--color-complementary-text-30)) !important;
+  color: rgb(var(--color-neutral-text-10)) !important;
 }
 
-.header-icon-btn {
-  background: transparent;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-  color: #fff;
+/* Search button transparent background */
+.ds-search .ds-btn--with-icon {
+  background-color: transparent !important;
+  background: none !important;
+  border: none !important;
+  outline: none !important;
 }
 
-.header-icon-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.header-icon-btn svg {
-  stroke: #fff;
-}
-
-/* Account Dropdown */
-.account-dropdown {
-  animation: dropdownFade 0.2s ease-in-out;
-}
-
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.account-dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  cursor: pointer;
-  border-bottom: 1px solid #e8e8e8;
-  transition: background-color 0.2s;
-  font-family: Lato, sans-serif;
-  font-size: 14px;
-  color: #333;
-  font-weight: 500;
-}
-
-.account-dropdown-item:last-child {
-  border-bottom: none;
-  border-radius: 0 0 4px 4px;
-}
-
-.account-dropdown-item:first-child {
-  border-radius: 4px 4px 0 0;
-}
-
-.account-dropdown-item:hover {
-  background-color: #f5f5f5;
-}
-
-.account-dropdown-item svg {
-  flex-shrink: 0;
-  stroke: #555;
-}
-
-.account-dropdown-item span {
-  flex: 1;
+/* Remove border from search button on all states */
+.ds-search .ds-btn--with-icon:hover,
+.ds-search .ds-btn--with-icon:focus,
+.ds-search .ds-btn--with-icon:active {
+  border: none !important;
+  outline: none !important;
 }
 
 /* Layout */
@@ -750,26 +692,6 @@
 
 /* Tablet (max-width: 900px) */
 @media (max-width: 900px) {
-  .settings-header {
-    padding: 10px 16px;
-  }
-
-  .page-title {
-    font-size: 18px;
-  }
-
-  .logo-image {
-    height: 30px;
-  }
-
-  .header-actions {
-    gap: 4px;
-  }
-
-  .header-icon-btn {
-    padding: 6px;
-  }
-
   .settings-container {
     padding: 32px 16px;
   }
@@ -814,35 +736,6 @@
 
 /* Mobile (max-width: 600px) */
 @media (max-width: 600px) {
-  .settings-header {
-    padding: 8px 12px;
-  }
-
-  .settings-header-container {
-    gap: 12px;
-  }
-
-  .page-title {
-    font-size: 16px;
-  }
-
-  .logo-image {
-    height: 28px;
-  }
-
-  .header-actions {
-    gap: 2px;
-  }
-
-  .header-icon-btn {
-    padding: 5px;
-  }
-
-  .header-icon-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-
   .settings-container {
     padding: 24px 12px;
   }
