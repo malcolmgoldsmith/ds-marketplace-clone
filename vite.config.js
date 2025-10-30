@@ -17,7 +17,12 @@ export default defineConfig({
     outDir: path.resolve(__dirname, 'dist'),
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'app/index.html')
+      input: {
+        main: path.resolve(__dirname, 'app/index.html'),
+        settings: path.resolve(__dirname, 'app/settings.html'),
+        'design-system': path.resolve(__dirname, 'app/design-system.html'),
+        'black-friday-demo': path.resolve(__dirname, 'app/black-friday-demo.html')
+      }
     }
   }
 });
