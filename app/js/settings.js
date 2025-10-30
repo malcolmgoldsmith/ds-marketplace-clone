@@ -426,6 +426,63 @@ function clearAllSettings() {
   }
 }
 
+// ===================================
+// Account Dropdown Menu
+// ===================================
+
+/**
+ * Toggle account dropdown visibility
+ */
+function toggleAccountMenu() {
+  const dropdown = document.getElementById('accountDropdown');
+  dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+}
+
+/**
+ * Handle My Account click
+ */
+function handleMyAccount() {
+  console.log('Navigating to My Account');
+  toggleAccountMenu();
+  // Add navigation logic here
+}
+
+/**
+ * Handle My Settings click
+ */
+function handleMySettings() {
+  console.log('Already on Settings page');
+  toggleAccountMenu();
+}
+
+/**
+ * Handle My Subscriptions click
+ */
+function handleMySubscriptions() {
+  console.log('Navigating to My Subscriptions');
+  toggleAccountMenu();
+  // Add navigation logic here
+}
+
+/**
+ * Handle Log Out click
+ */
+function handleLogOut() {
+  console.log('Logging out');
+  toggleAccountMenu();
+  // Add logout logic here
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  const dropdown = document.getElementById('accountDropdown');
+  const userMenu = document.querySelector('.user-account-menu');
+
+  if (dropdown && userMenu && !userMenu.contains(event.target)) {
+    dropdown.style.display = 'none';
+  }
+});
+
 // Make functions available globally for inline onclick handlers
 window.toggleAlternateEmailForm = toggleAlternateEmailForm;
 window.saveAlternateEmail = saveAlternateEmail;
@@ -438,3 +495,8 @@ window.deleteDevice = deleteDevice;
 window.toggleHowToGuide = toggleHowToGuide;
 window.exportSettings = exportSettings;
 window.clearAllSettings = clearAllSettings;
+window.toggleAccountMenu = toggleAccountMenu;
+window.handleMyAccount = handleMyAccount;
+window.handleMySettings = handleMySettings;
+window.handleMySubscriptions = handleMySubscriptions;
+window.handleLogOut = handleLogOut;
