@@ -1,0 +1,63 @@
+<!-- Black Friday Version 1: Minimal Banner Component -->
+<div class="bf-v1-banner">
+    <h1 class="bf-v1-headline">Black Friday Sale</h1>
+    <p class="bf-v1-subtitle">Incredible deals starting soon!</p>
+
+    <div class="bf-v1-countdown" id="v1-countdown">
+        <span class="countdown-number" id="v1-days">00</span>
+        <span class="countdown-separator">:</span>
+        <span class="countdown-number" id="v1-hours">00</span>
+        <span class="countdown-separator">:</span>
+        <span class="countdown-number" id="v1-minutes">01</span>
+        <span class="countdown-separator">:</span>
+        <span class="countdown-number" id="v1-seconds">00</span>
+    </div>
+
+    <div class="bf-v1-countdown-labels">
+        <span class="bf-v1-countdown-label">Days</span>
+        <span class="bf-v1-countdown-label">Hours</span>
+        <span class="bf-v1-countdown-label">Minutes</span>
+        <span class="bf-v1-countdown-label">Seconds</span>
+    </div>
+
+    <div class="bf-v1-cta">
+        <button onclick="document.getElementById('v1-products').scrollIntoView({behavior: 'smooth'})">
+            View Deals
+        </button>
+    </div>
+</div>
+
+<script>
+// Initialize Version 1 countdown timer
+(function() {
+    const timer = window.BlackFridayTimers.create('v1', {
+        startOffset: 60000, // 1 minute
+        onTick: (time) => {
+            const pad = (num) => String(num).padStart(2, '0');
+            document.getElementById('v1-days').textContent = pad(time.days);
+            document.getElementById('v1-hours').textContent = pad(time.hours);
+            document.getElementById('v1-minutes').textContent = pad(time.minutes);
+            document.getElementById('v1-seconds').textContent = pad(time.seconds);
+        },
+        onComplete: () => {
+            const banner = document.querySelector('.bf-v1-banner');
+            banner.innerHTML = `
+                <div class="sale-live-v1">
+                    🔥 SALE LIVE NOW! 🔥
+                </div>
+                <p class="bf-v1-subtitle" style="margin-top: 20px;">
+                    Don't miss out on exclusive Black Friday deals!
+                </p>
+                <div class="bf-v1-cta">
+                    <button onclick="document.getElementById('v1-products').scrollIntoView({behavior: 'smooth'})">
+                        Shop Now
+                    </button>
+                </div>
+            `;
+        }
+    });
+
+    timer.start();
+    console.log('✅ V1 countdown timer initialized');
+})();
+</script>

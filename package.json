@@ -1,0 +1,22 @@
+{
+  "name": "lenovo-marketplace-clone",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "crawl": "node scripts/crawl.mjs",
+    "capture": "node scripts/capture.mjs",
+    "rewrite": "node scripts/rewrite.mjs",
+    "verify": "node scripts/verify.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pipeline": "npm run crawl && npm run capture && npm run rewrite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0",
+    "node-fetch": "^3.3.2"
+  }
+}

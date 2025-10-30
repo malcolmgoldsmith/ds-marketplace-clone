@@ -1,0 +1,219 @@
+/* Black Friday Common Styles - Shared across all versions */
+
+/* Color Palette */
+:root {
+  --bf-purple: #5d2661;
+  --bf-red: #c8102e;
+  --bf-dark: #1a1a1a;
+  --bf-gradient: linear-gradient(135deg, #5d2661, #c8102e);
+  --bf-gradient-reverse: linear-gradient(135deg, #c8102e, #5d2661);
+  --bf-text-light: #ffffff;
+  --bf-text-dark: #333333;
+  --bf-border: #e0e0e0;
+  --bf-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Shared countdown timer base styles */
+.countdown-timer {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.countdown-unit {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-number {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--bf-text-dark);
+}
+
+.countdown-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.countdown-separator {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--bf-text-dark);
+  margin: 0 4px;
+}
+
+/* Sale Live State */
+.sale-live {
+  animation: pulse 1.5s infinite;
+  color: var(--bf-red);
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.sale-live-banner {
+  background: var(--bf-gradient);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.sale-live-title {
+  color: white;
+  font-size: 64px;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  animation: pulse 1.5s infinite;
+}
+
+.sale-live-subtitle {
+  color: white;
+  font-size: 24px;
+  margin: 0 0 30px 0;
+}
+
+/* Black Friday Badge */
+.bf-badge {
+  background: var(--bf-red);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--bf-red), 0 0 10px var(--bf-red);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--bf-red), 0 0 20px var(--bf-red), 0 0 30px var(--bf-red);
+  }
+}
+
+/* Utility Classes */
+.bf-gradient-bg {
+  background: var(--bf-gradient);
+}
+
+.bf-text-white {
+  color: white;
+}
+
+.bf-text-center {
+  text-align: center;
+}
+
+.bf-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Button Styles */
+.bf-cta-button {
+  background: var(--bf-gradient);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bf-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.bf-cta-button.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .countdown-number {
+    font-size: 32px;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+  }
+
+  .sale-live-title {
+    font-size: 36px;
+  }
+
+  .sale-live-subtitle {
+    font-size: 18px;
+  }
+}

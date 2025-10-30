@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Settings - Lenovo Subscription Portal</title>
+  <base href="/">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/css/settings.css">
+</head>
+<body>
+  <div class="theme-uds-light">
+    <!-- Header (same as main page) -->
+    <header class="ds-header ds-header-xl" style="background: #fff; border-bottom: 1px solid #e0e0e0; padding: 12px 24px;">
+      <div style="max-width: 1440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+        <a href="/" title="Back to Home">
+          <img src="/assets/images/header-main-logo-image.svg" alt="Lenovo Logo" style="height: 32px;">
+        </a>
+        <h1 style="font-family: Lato, sans-serif; font-size: 24px; font-weight: 600; color: #333; margin: 0;">Settings</h1>
+        <div style="width: 150px;"></div> <!-- Spacer for centering -->
+      </div>
+    </header>
+
+    <!-- Settings Content -->
+    <main class="settings-container">
+      <div class="settings-content">
+
+        <!-- Section 1: Email Addresses -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2 class="section-title">Email Addresses</h2>
+            <p class="section-description">Manage your primary and alternate email addresses</p>
+          </div>
+
+          <div class="settings-card">
+            <!-- Primary Email (read-only) -->
+            <div class="setting-item">
+              <label class="setting-label">Primary Email</label>
+              <div class="email-display" id="primaryEmail">user@example.com</div>
+              <p class="setting-helper">This is your account email address</p>
+            </div>
+
+            <!-- Alternate Email -->
+            <div class="setting-item">
+              <label class="setting-label">Alternate Email</label>
+              <div id="alternateEmailDisplay" class="email-display-container">
+                <span class="email-display" id="alternateEmailText">No alternate email set</span>
+                <button onclick="toggleAlternateEmailForm()" class="btn-link" id="editAlternateBtn">Add Email</button>
+              </div>
+
+              <!-- Alternate Email Form (hidden by default) -->
+              <div id="alternateEmailForm" class="email-form" style="display: none;">
+                <input
+                  type="email"
+                  id="alternateEmailInput"
+                  class="ds-field__input"
+                  placeholder="Enter alternate email"
+                  aria-label="Alternate email address"
+                />
+                <div class="form-actions">
+                  <button onclick="saveAlternateEmail()" class="ds-btn ds-btn--primary">Save</button>
+                  <button onclick="cancelAlternateEmailEdit()" class="ds-btn">Cancel</button>
+                </div>
+                <p class="input-error" id="emailError" style="display: none;"></p>
+              </div>
+              <p class="setting-helper">Use this email for important notifications</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Terms & Conditions -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2 class="section-title">Terms & Conditions</h2>
+            <p class="section-description">Accept terms for current and future purchases</p>
+          </div>
+
+          <div class="settings-card">
+            <!-- Lenovo Terms -->
+            <div class="setting-item">
+              <div class="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="lenovoTerms"
+                  class="terms-checkbox"
+                  onchange="handleTermsChange('lenovo')"
+                />
+                <label for="lenovoTerms" class="checkbox-label">
+                  <span class="checkbox-text">Lenovo Terms & Conditions</span>
+                </label>
+              </div>
+              <p class="setting-helper">
+                I accept Lenovo's Terms & Conditions for current and future purchases.
+                <a href="https://www.lenovo.com/us/en/privacy/" target="_blank" class="terms-link">View Terms</a>
+              </p>
+            </div>
+
+            <!-- Software Publisher Terms -->
+            <div class="setting-item">
+              <div class="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="publisherTerms"
+                  class="terms-checkbox"
+                  onchange="handleTermsChange('publisher')"
+                />
+                <label for="publisherTerms" class="checkbox-label">
+                  <span class="checkbox-text">Software Publisher Terms & Conditions</span>
+                </label>
+              </div>
+              <p class="setting-helper">
+                I accept software publisher terms for current and future purchases.
+                <a href="https://www.lenovo.com/us/en/privacy/" target="_blank" class="terms-link">View Terms</a>
+              </p>
+            </div>
+
+            <!-- Success Message -->
+            <div id="termsSuccess" class="success-message" style="display: none;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.2 6.4L7.4 12c-.2.2-.4.2-.6.2s-.4-.1-.6-.2l-2.6-2.6c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l2 2 4.2-5c.3-.3.8-.4 1.1-.1.4.3.5.8.2 1.2z"/>
+              </svg>
+              <span>Your preferences have been saved</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: My Devices -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2 class="section-title">My Devices</h2>
+            <p class="section-description">Manage your registered Lenovo devices</p>
+          </div>
+
+          <div class="settings-card">
+            <!-- Device List -->
+            <div class="device-list" id="deviceList">
+              <!-- Devices will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <p>No devices registered</p>
+            </div>
+
+            <!-- Add Device Button -->
+            <button onclick="showAddDeviceForm()" class="ds-btn ds-btn--primary add-device-btn" id="addDeviceBtn">
+              <span style="font-size: 18px; margin-right: 4px;">+</span> Add Device
+            </button>
+
+            <!-- Add Device Form (hidden by default) -->
+            <div id="addDeviceForm" class="device-form" style="display: none;">
+              <h3 class="form-title">Add New Device</h3>
+              <div class="form-field">
+                <label for="productNumber" class="field-label">Product Number *</label>
+                <input
+                  type="text"
+                  id="productNumber"
+                  class="ds-field__input"
+                  placeholder="e.g., 21Q7ZCM0US"
+                  aria-label="Product number"
+                />
+              </div>
+              <div class="form-field">
+                <label for="serialNumber" class="field-label">Serial Number *</label>
+                <input
+                  type="text"
+                  id="serialNumber"
+                  class="ds-field__input"
+                  placeholder="e.g., PF5AWM6A"
+                  aria-label="Serial number"
+                />
+              </div>
+              <p class="input-error" id="deviceError" style="display: none;"></p>
+              <div class="form-actions">
+                <button onclick="saveDevice()" class="ds-btn ds-btn--primary">Save Device</button>
+                <button onclick="cancelAddDevice()" class="ds-btn">Cancel</button>
+              </div>
+            </div>
+
+            <!-- How-to Guide (collapsible) -->
+            <div class="how-to-guide">
+              <button onclick="toggleHowToGuide()" class="how-to-header" id="howToToggle">
+                <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M3 6.02l4.152 4.16.833.82L13 6z"/>
+                </svg>
+                <span>How to find your device information</span>
+              </button>
+              <div id="howToContent" class="how-to-content" style="display: none;">
+                <p class="how-to-text">
+                  On ThinkPad devices, you can find your product number and serial number in the BIOS settings or on a label on the bottom of your device.
+                </p>
+                <div class="how-to-image">
+                  <div class="image-placeholder">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext fill='%23666' font-family='sans-serif' font-size='16' x='50%25' y='50%25' text-anchor='middle' dy='0.3em'%3EThinkPad X9-15 Gen 1%3C/text%3E%3Ctext fill='%23333' font-family='monospace' font-size='12' x='20' y='200'%3ESerial number: PF5AWM6A%3C/text%3E%3Ctext fill='%23333' font-family='monospace' font-size='12' x='20' y='220'%3EProduct number: 21Q7ZCM0US%3C/text%3E%3Ctext fill='%23333' font-family='monospace' font-size='12' x='20' y='240'%3EBIOS version: N4CET36W (1.12)%3C/text%3E%3C/svg%3E" alt="ThinkPad device information example showing serial number and product number locations" style="width: 100%; max-width: 500px; border: 1px solid #e0e0e0; border-radius: 4px;">
+                  </div>
+                  <p class="image-caption">Example: ThinkPad device information in BIOS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="https://www.lenovo.com/us/en/privacy/">Privacy Policy</a>
+          <a href="/terms-and-conditions">Terms of Use</a>
+          <a href="/cancellation-policy">Cancellation Policy</a>
+          <a href="https://solutions.lenovocloudsoftware.com/portal/en/kb/lenovosolutions">Contact Support</a>
+        </div>
+        <div class="copyright">©Lenovo Group. All rights reserved</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/js/settings.js"></script>
+</body>
+</html>

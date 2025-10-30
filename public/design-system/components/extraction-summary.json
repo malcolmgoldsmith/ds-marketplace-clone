@@ -1,0 +1,17 @@
+{
+  "extractedAt": "2025-10-21T14:38:53.554Z",
+  "stats": {
+    "atoms": {
+      "colors": 20,
+      "typography": 10,
+      "buttons": 11,
+      "icons": 7
+    },
+    "molecules": 1,
+    "organisms": {
+      "header": 0,
+      "productCards": 8
+    }
+  },
+  "totalComponents": 57
+}

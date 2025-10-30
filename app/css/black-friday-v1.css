@@ -1,0 +1,159 @@
+/* Black Friday Version 1: Minimal Banner Styles */
+
+.bf-v1-banner {
+  background: linear-gradient(135deg, #1a1a1a 0%, #5d2661 50%, #c8102e 100%);
+  padding: 30px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.bf-v1-headline {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bf-v1-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  margin: 0 0 20px 0;
+}
+
+.bf-v1-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.bf-v1-countdown .countdown-number {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  min-width: 60px;
+}
+
+.bf-v1-countdown .countdown-separator {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 36px;
+  margin: 0 8px;
+}
+
+.bf-v1-countdown-labels {
+  display: flex;
+  justify-content: center;
+  gap: 76px;
+  margin-top: 8px;
+}
+
+.bf-v1-countdown-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.bf-v1-cta {
+  margin-top: 20px;
+}
+
+.bf-v1-cta button {
+  background: white;
+  color: #5d2661;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bf-v1-cta button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: #f0f0f0;
+}
+
+/* Sale Live State for V1 */
+.bf-v1-banner .sale-live-v1 {
+  color: white;
+  font-size: 56px;
+  font-weight: 900;
+  margin: 20px 0;
+  animation: pulse 1.5s infinite;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bf-v1-headline {
+    font-size: 24px;
+  }
+
+  .bf-v1-countdown .countdown-number {
+    font-size: 32px;
+    min-width: 45px;
+  }
+
+  .bf-v1-countdown .countdown-separator {
+    font-size: 24px;
+  }
+
+  .bf-v1-countdown-labels {
+    gap: 53px;
+  }
+
+  .bf-v1-banner .sale-live-v1 {
+    font-size: 36px;
+  }
+
+  .bf-v1-banner {
+    padding: 24px 16px;
+  }
+
+  .bf-v1-subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bf-v1-headline {
+    font-size: 20px;
+  }
+
+  .bf-v1-subtitle {
+    font-size: 13px;
+  }
+
+  .bf-v1-countdown .countdown-number {
+    font-size: 28px;
+    min-width: 40px;
+  }
+
+  .bf-v1-countdown .countdown-separator {
+    font-size: 20px;
+    margin: 0 4px;
+  }
+
+  .bf-v1-countdown-labels {
+    gap: 46px;
+  }
+
+  .bf-v1-cta button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .bf-v1-banner .sale-live-v1 {
+    font-size: 28px;
+  }
+}

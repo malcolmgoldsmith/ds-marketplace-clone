@@ -1,0 +1,19 @@
+{
+  "layout": {
+    "hasSidebar": false,
+    "hasHeader": false,
+    "hasFooter": true,
+    "mainContentSelector": "unknown"
+  },
+  "colorScheme": {
+    "backgroundColor": "rgb(248, 250, 252)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"Noto Sans\", system-ui, sans-serif"
+  },
+  "features": {
+    "hasSearch": false,
+    "hasThemeToggle": false,
+    "hasTabs": false,
+    "hasCopyButtons": false
+  }
+}

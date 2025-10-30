@@ -1,0 +1,32 @@
+{
+  "extractedAt": "2025-10-21T14:43:22.674Z",
+  "source": "https://marketplace.naea1.uds.lenovo.com/",
+  "totalComponents": 28,
+  "breakdown": {
+    "atoms": {
+      "total": 12,
+      "buttons": 5,
+      "inputs": 1,
+      "chips": 2,
+      "icons": 3,
+      "avatars": 0,
+      "links": 1
+    },
+    "molecules": {
+      "total": 2,
+      "dropdowns": 0,
+      "searchFields": 1,
+      "breadcrumbs": 1,
+      "formFields": 0,
+      "tabs": 0
+    },
+    "organisms": {
+      "total": 14,
+      "headers": 1,
+      "footers": 0,
+      "cards": 11,
+      "navigation": 2,
+      "modals": 0
+    }
+  }
+}

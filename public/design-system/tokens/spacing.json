@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.opendesignsystems.org/token/v1.0.0",
+  "spacing": {
+    "none": { "value": "0px", "type": "dimension", "description": "No spacing" },
+    "xs": { "value": "4px", "type": "dimension", "description": "Extra small spacing" },
+    "sm": { "value": "8px", "type": "dimension", "description": "Small spacing" },
+    "md": { "value": "16px", "type": "dimension", "description": "Medium spacing" },
+    "lg": { "value": "24px", "type": "dimension", "description": "Large spacing" },
+    "xl": { "value": "32px", "type": "dimension", "description": "Extra large spacing" },
+    "2xl": { "value": "40px", "type": "dimension", "description": "2X large spacing" },
+    "3xl": { "value": "48px", "type": "dimension", "description": "3X large spacing" },
+    "4xl": { "value": "64px", "type": "dimension", "description": "4X large spacing" },
+    "5xl": { "value": "80px", "type": "dimension", "description": "5X large spacing" },
+    "6xl": { "value": "96px", "type": "dimension", "description": "6X large spacing" }
+  },
+  "layout": {
+    "container": {
+      "sm": { "value": "640px", "type": "dimension", "description": "Small container max-width" },
+      "md": { "value": "768px", "type": "dimension", "description": "Medium container max-width" },
+      "lg": { "value": "1024px", "type": "dimension", "description": "Large container max-width" },
+      "xl": { "value": "1280px", "type": "dimension", "description": "Extra large container max-width" },
+      "2xl": { "value": "1440px", "type": "dimension", "description": "2X large container max-width" }
+    },
+    "breakpoints": {
+      "mobile": { "value": "600px", "type": "dimension", "description": "Mobile breakpoint" },
+      "tablet": { "value": "1065px", "type": "dimension", "description": "Tablet breakpoint" },
+      "desktop": { "value": "1440px", "type": "dimension", "description": "Desktop breakpoint" }
+    }
+  }
+}

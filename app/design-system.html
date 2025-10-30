@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDS Marketplace - Design System</title>
+
+    <!-- Reference existing CSS from cloned site -->
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+    <style>
+        /* Design System Documentation Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .ds-doc-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .ds-doc-sidebar {
+            width: 280px;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .ds-doc-sidebar h1 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+
+        .ds-doc-sidebar .subtitle {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .ds-doc-nav-section {
+            margin-bottom: 25px;
+        }
+
+        .ds-doc-nav-section h2 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .ds-doc-nav-link {
+            display: block;
+            padding: 8px 12px;
+            color: #ccc;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            transition: all 0.2s;
+        }
+
+        .ds-doc-nav-link:hover {
+            background: #2a2a3e;
+            color: #fff;
+        }
+
+        .ds-doc-nav-link.active {
+            background: #6366f1;
+            color: #fff;
+        }
+
+        /* Main Content */
+        .ds-doc-main {
+            margin-left: 280px;
+            padding: 40px;
+            flex: 1;
+            max-width: 1400px;
+            height: 100vh;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .ds-doc-header {
+            margin-bottom: 40px;
+        }
+
+        .ds-doc-header h1 {
+            font-size: 48px;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .ds-doc-header p {
+            font-size: 18px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Search */
+        .ds-doc-search {
+            margin-bottom: 30px;
+        }
+
+        .ds-doc-search input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .ds-doc-search input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Component Card */
+        .ds-component-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .ds-component-card h2 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+        }
+
+        .ds-component-card .description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* Tabs */
+        .ds-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .ds-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            color: #666;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .ds-tab:hover {
+            color: #333;
+        }
+
+        .ds-tab.active {
+            color: #6366f1;
+            border-bottom-color: #6366f1;
+        }
+
+        .ds-tab-content {
+            display: none;
+        }
+
+        .ds-tab-content.active {
+            display: block;
+        }
+
+        /* Preview Area */
+        .ds-preview {
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+        }
+
+        /* Code Block */
+        .ds-code-block {
+            position: relative;
+        }
+
+        .ds-copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            background: #6366f1;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .ds-copy-button:hover {
+            background: #4f46e5;
+        }
+
+        .ds-copy-button.copied {
+            background: #10b981;
+        }
+
+        pre[class*="language-"] {
+            margin: 0;
+            border-radius: 8px;
+        }
+
+        /* Color Swatches */
+        .ds-color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .ds-color-swatch {
+            text-align: center;
+        }
+
+        .ds-color-box {
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #e5e5e5;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ds-color-swatch:hover .ds-color-box {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+        }
+
+        .ds-color-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        .ds-color-value {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Typography */
+        .ds-typography-sample {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        /* Button Grid */
+        .ds-button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Section Heading */
+        .ds-section-heading {
+            font-size: 36px;
+            margin: 60px 0 30px 0;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .ds-section-heading:first-child {
+            margin-top: 0;
+        }
+
+        /* Icon Grid */
+        .ds-icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .ds-icon-item {
+            text-align: center;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .ds-icon-item svg {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 8px;
+        }
+
+        .ds-icon-name {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Product Cards Grid */
+        #product-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 27px;
+            margin-top: 20px;
+        }
+
+        /* Product Card Styles from Site */
+        #product-cards-container .ds-card {
+            width: 352px;
+            box-sizing: border-box;
+        }
+
+        .ds-card .ds-card__image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ds-card .content-card-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ds-card .card-content {
+            padding: 16px;
+            max-height: none;
+        }
+
+        .ds-card .card-category-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ds-card .ds-chips {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f0f0f0;
+            border-radius: 16px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .ds-card .card-title {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin: 0;
+            color: #333;
+        }
+
+        .ds-card-outline {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .ds-card-outline:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Featured Cards - Special Offers & McAfee */
+        .ds-card-featured {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .ds-card-featured .ds-card__image--featured {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .ds-card-featured .featured-card-heading {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+            text-align: center;
+            font-family: Lato, sans-serif, Helvetica, Arial;
+        }
+
+        .ds-card-featured .featured-card-logo {
+            max-width: 200px;
+            max-height: 100px;
+            object-fit: contain;
+        }
+
+        .ds-card-featured .card-content {
+            background: white;
+        }
+
+        .ds-card-featured .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .ds-card-featured .card-description {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Search Field Styles */
+        #search-examples ds-search-field,
+        #search-examples .ds-search,
+        #search-examples .ds-field {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        #search-examples .ds-field__input,
+        #search-examples .ds-search__input {
+            flex: 1;
+            border: none !important;
+            height: 40px;
+            padding: 10px 16px;
+            font-size: 14px;
+        }
+
+        #search-examples button,
+        #search-examples .ds-btn {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border: none;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        #search-examples button:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        #search-examples svg {
+            width: 24px;
+            height: 24px;
+            fill: #333;
+        }
+
+        #search-examples .ds-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Dropdown Styles */
+        #dropdown-examples .ds-dropdown,
+        #dropdown-examples ds-country-dropdown {
+            display: inline-block;
+            position: relative;
+            width: 170px;
+            margin-bottom: 16px;
+            margin-right: 16px;
+        }
+
+        #dropdown-examples .ds-dropdown__trigger {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            border: 1px solid rgb(106, 129, 158);
+            background-color: rgb(255, 255, 255);
+            padding: 10px 12px;
+            cursor: pointer;
+            min-height: 40px;
+            box-sizing: border-box;
+        }
+
+        #dropdown-examples .ds-dropdown__trigger:hover {
+            border-color: rgb(0, 102, 205);
+        }
+
+        /* Flag Icon Container */
+        #dropdown-examples .ds-field__icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        /* Flag SVG */
+        #dropdown-examples .ds-field__icon svg {
+            width: 16px !important;
+            height: 16px !important;
+            max-width: 16px !important;
+            max-height: 16px !important;
+            display: block !important;
+        }
+
+        /* Text Input */
+        #dropdown-examples .ds-dropdown__input {
+            flex: 1;
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            font-family: Lato, sans-serif, Helvetica, Arial;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: rgb(31, 31, 31);
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+        }
+
+        /* Caret Arrow Container */
+        #dropdown-examples .ds-dropdown__show-more {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            margin-left: auto;
+            font-size: 12px;
+        }
+
+        /* Caret Arrow SVG */
+        #dropdown-examples .ds-dropdown__show-more svg {
+            width: 12px !important;
+            height: 12px !important;
+            max-width: 12px !important;
+            max-height: 12px !important;
+            display: block !important;
+            fill: rgb(31, 31, 31);
+        }
+
+        /* Header Styles */
+        #header-examples .ds-header {
+            background-color: #2b3a4a;
+            padding: 16px 24px;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+        }
+
+        #header-examples .ds-header__container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #header-examples .ds-header__logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #header-examples .ds-header__logo img {
+            height: 28px;
+            width: auto;
+        }
+
+        /* Breadcrumbs Styles */
+        #breadcrumbs-examples ds-breadcrumbs,
+        #breadcrumbs-examples .ds-breadcrumbs {
+            background-color: #f7f9fa;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+
+        #breadcrumbs-examples .ds-breadcrumbs__link--last {
+            color: #333;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="ds-doc-container">
+        <!-- Sidebar Navigation -->
+        <nav class="ds-doc-sidebar">
+            <h1>UDS Marketplace</h1>
+            <div class="subtitle">Design System</div>
+
+            <div class="ds-doc-nav-section">
+                <h2>Overview</h2>
+                <a href="#introduction" class="ds-doc-nav-link active">Introduction</a>
+            </div>
+
+            <div class="ds-doc-nav-section">
+                <h2>Foundations</h2>
+                <a href="#colors" class="ds-doc-nav-link">Colors</a>
+                <a href="#typography" class="ds-doc-nav-link">Typography</a>
+                <a href="#icons" class="ds-doc-nav-link">Icons</a>
+            </div>
+
+            <div class="ds-doc-nav-section">
+                <h2>Atoms</h2>
+                <a href="#buttons" class="ds-doc-nav-link">Buttons</a>
+            </div>
+
+            <div class="ds-doc-nav-section">
+                <h2>Molecules</h2>
+                <a href="#breadcrumbs" class="ds-doc-nav-link">Breadcrumbs</a>
+                <a href="#search-field" class="ds-doc-nav-link">Search Field</a>
+                <a href="#dropdown" class="ds-doc-nav-link">Dropdown</a>
+            </div>
+
+            <div class="ds-doc-nav-section">
+                <h2>Organisms</h2>
+                <a href="#header" class="ds-doc-nav-link">Header</a>
+                <a href="#product-cards" class="ds-doc-nav-link">Product Cards</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="ds-doc-main">
+            <!-- Introduction -->
+            <div id="introduction" class="ds-doc-header">
+                <h1>Design System</h1>
+                <p>Component library for the UDS Marketplace cloned from marketplace.naea1.uds.lenovo.com</p>
+            </div>
+
+            <!-- Search -->
+            <div class="ds-doc-search">
+                <input type="text" id="component-search" placeholder="Search components...">
+            </div>
+
+            <!-- Colors Section -->
+            <h2 id="colors" class="ds-section-heading">Colors</h2>
+
+            <!-- Color System Overview -->
+            <div class="ds-component-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-bottom: 20px;">
+                <div id="color-system-stats" style="display: flex; gap: 40px; flex-wrap: wrap;">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="ds-component-card">
+                <h2>Color Palettes</h2>
+                <p class="description">All 12 color palettes from the Lenovo UDS design system with 156 total shades</p>
+
+                <div class="ds-tabs">
+                    <button class="ds-tab active" data-tab="colors-preview">All Palettes</button>
+                    <button class="ds-tab" data-tab="colors-code">CSS Variables</button>
+                </div>
+
+                <div class="ds-tab-content active" id="colors-preview">
+                    <div class="ds-color-grid" id="color-swatches">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="ds-tab-content" id="colors-code">
+                    <div class="ds-code-block">
+                        <button class="ds-copy-button" onclick="copyCode(this)">Copy</button>
+                        <pre><code class="language-css">/* Colors will be shown here */</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography Section -->
+            <h2 id="typography" class="ds-section-heading">Typography</h2>
+            <div class="ds-component-card">
+                <h2>Typography Styles</h2>
+                <p class="description">Font families and styles from the cloned site</p>
+
+                <div class="ds-tabs">
+                    <button class="ds-tab active" data-tab="typography-preview">Preview</button>
+                    <button class="ds-tab" data-tab="typography-code">CSS</button>
+                </div>
+
+                <div class="ds-tab-content active" id="typography-preview">
+                    <div id="typography-samples">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="ds-tab-content" id="typography-code">
+                    <div class="ds-code-block">
+                        <button class="ds-copy-button" onclick="copyCode(this)">Copy</button>
+                        <pre><code class="language-css" id="typography-css">/* Typography CSS will be shown here */</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icons Section -->
+            <h2 id="icons" class="ds-section-heading">Icons</h2>
+            <div class="ds-component-card">
+                <h2>Icon Library</h2>
+                <p class="description">SVG icons used in the marketplace</p>
+
+                <div class="ds-icon-grid" id="icon-grid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Buttons Section -->
+            <h2 id="buttons" class="ds-section-heading">Buttons</h2>
+            <div class="ds-component-card">
+                <h2>Button Styles</h2>
+                <p class="description">All button variants found in the cloned site</p>
+
+                <div class="ds-tabs">
+                    <button class="ds-tab active" data-tab="buttons-preview">Preview</button>
+                    <button class="ds-tab" data-tab="buttons-code">HTML</button>
+                </div>
+
+                <div class="ds-tab-content active" id="buttons-preview">
+                    <div class="ds-button-grid" id="button-examples">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="ds-tab-content" id="buttons-code">
+                    <div class="ds-code-block">
+                        <button class="ds-copy-button" onclick="copyCode(this)">Copy</button>
+                        <pre><code class="language-html" id="buttons-html"><!-- Button HTML will be shown here --></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumbs Section -->
+            <h2 id="breadcrumbs" class="ds-section-heading">Breadcrumbs</h2>
+            <div class="ds-component-card">
+                <h2>Breadcrumb Navigation</h2>
+                <p class="description">Breadcrumb navigation component from the marketplace</p>
+
+                <div class="ds-tabs">
+                    <button class="ds-tab active" data-tab="breadcrumbs-preview">Preview</button>
+                    <button class="ds-tab" data-tab="breadcrumbs-code">HTML</button>
+                </div>
+
+                <div class="ds-tab-content active" id="breadcrumbs-preview">
+                    <div class="ds-preview" id="breadcrumbs-examples">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="ds-tab-content" id="breadcrumbs-code">
+                    <div class="ds-code-block">
+                        <button class="ds-copy-button" onclick="copyCode(this)">Copy</button>
+                        <pre><code class="language-html" id="breadcrumbs-html"><!-- Breadcrumb HTML will be shown here --></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Field Section -->
+            <h2 id="search-field" class="ds-section-heading">Search Field</h2>
+            <div class="ds-component-card">
+                <h2>Search Input</h2>
+                <p class="description">Search field component with icon</p>
+
+                <div class="ds-tabs">
+                    <button class="ds-tab active" data-tab="search-preview">Preview</button>
+                    <button class="ds-tab" data-tab="search-code">HTML</button>
+                </div>
+
+                <div class="ds-tab-content active" id="search-preview">
+                    <div class="ds-preview" id="search-examples">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="ds-tab-content" id="search-code">
+                    <div class="ds-code-block">
+                        <button class="ds-copy-button" onclick="copyCode(this)">Copy</button>
+                        <pre><code class="language-html" id="search-html"><!-- Search field HTML will be shown here --></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dropdown Section -->
+            <h2 id="dropdown" class="ds-section-heading">Dropdown</h2>
+            <div class="ds-component-card">
+                <h2>Dropdown Components</h2>
+                <p class="description">Dropdown menus and selects from the marketplace</p>
+
+                <div class="ds-tabs">
+                    <button class="ds-tab active" data-tab="dropdown-preview">Preview</button>
+                    <button class="ds-tab" data-tab="dropdown-code">HTML</button>
+                </div>
+
+                <div class="ds-tab-content active" id="dropdown-preview">
+                    <div class="ds-preview" id="dropdown-examples">
+                        <p style="color: #888; font-style: italic;">No dropdown components extracted yet</p>
+                    </div>
+                </div>
+
+                <div class="ds-tab-content" id="dropdown-code">
+                    <div class="ds-code-block">
+                        <button class="ds-copy-button" onclick="copyCode(this)">Copy</button>
+                        <pre><code class="language-html" id="dropdown-html"><!-- Dropdown HTML will be shown here --></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Section -->
+            <h2 id="header" class="ds-section-heading">Header</h2>
+            <div class="ds-component-card">
+                <h2>Site Header</h2>
+                <p class="description">Main header component from the marketplace</p>
+
+                <div class="ds-tabs">
+                    <button class="ds-tab active" data-tab="header-preview">Preview</button>
+                    <button class="ds-tab" data-tab="header-code">HTML</button>
+                </div>
+
+                <div class="ds-tab-content active" id="header-preview">
+                    <div class="ds-preview" id="header-examples">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="ds-tab-content" id="header-code">
+                    <div class="ds-code-block">
+                        <button class="ds-copy-button" onclick="copyCode(this)">Copy</button>
+                        <pre><code class="language-html" id="header-html"><!-- Header HTML will be shown here --></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Cards Section -->
+            <h2 id="product-cards" class="ds-section-heading">Product Cards</h2>
+            <div class="ds-component-card">
+                <h2>Partner Product Cards</h2>
+                <p class="description">Product cards for marketplace partners</p>
+
+                <div id="product-cards-container">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+
+    <script>
+        // Load component data and design tokens
+        const designSystemData = {
+            tokens: {
+                colors: null,
+                typography: null,
+                spacing: null,
+                effects: null
+            },
+            components: {
+                atoms: null,
+                molecules: null,
+                organisms: null
+            }
+        };
+
+        // Fetch all design system data
+        async function loadComponents() {
+            try {
+                // Load design tokens
+                const [colors, typography, spacing, effects] = await Promise.all([
+                    fetch('/design-system/tokens/colors.json').then(r => r.json()),
+                    fetch('/design-system/tokens/typography.json').then(r => r.json()),
+                    fetch('/design-system/tokens/spacing.json').then(r => r.json()),
+                    fetch('/design-system/tokens/effects.json').then(r => r.json())
+                ]);
+
+                designSystemData.tokens.colors = colors;
+                designSystemData.tokens.typography = typography;
+                designSystemData.tokens.spacing = spacing;
+                designSystemData.tokens.effects = effects;
+
+                // Load components (try v2 files first, fallback to original)
+                const [atoms, molecules, organisms] = await Promise.all([
+                    fetch('/design-system/components/atoms-v2.json').then(r => r.json()).catch(() =>
+                        fetch('/design-system/components/atoms.json').then(r => r.json())
+                    ),
+                    fetch('/design-system/components/molecules-v2.json').then(r => r.json()).catch(() =>
+                        fetch('/design-system/components/molecules.json').then(r => r.json())
+                    ),
+                    fetch('/design-system/components/organisms-v2.json').then(r => r.json()).catch(() =>
+                        fetch('/design-system/components/organisms.json').then(r => r.json())
+                    )
+                ]);
+
+                designSystemData.components.atoms = atoms;
+                designSystemData.components.molecules = molecules;
+                designSystemData.components.organisms = organisms;
+
+                renderComponents();
+            } catch (error) {
+                console.error('Failed to load design system data:', error);
+                console.error('Error details:', error);
+            }
+        }
+
+        // Render all components
+        function renderComponents() {
+            console.log('Rendering components...', designSystemData);
+
+            // Render colors
+            renderColors();
+
+            // Render typography
+            renderTypography();
+
+            // Render icons
+            renderIcons();
+
+            // Render buttons
+            renderButtons();
+
+            // Render molecules
+            renderBreadcrumbs();
+            renderSearchFields();
+            renderDropdowns();
+
+            // Render organisms
+            renderHeader();
+            renderProductCards();
+
+            // Highlight code blocks
+            Prism.highlightAll();
+        }
+
+        // Render color swatches from design tokens - organized by palette
+        function renderColors() {
+            const container = document.getElementById('color-swatches');
+            const statsContainer = document.getElementById('color-system-stats');
+            const colorTokens = designSystemData.tokens.colors;
+
+            if (!colorTokens || !colorTokens.colors) {
+                container.innerHTML = '<p>Loading colors...</p>';
+                return;
+            }
+
+            const palettes = colorTokens.colors.palette;
+            const paletteNames = Object.keys(palettes);
+
+            // Calculate total colors
+            let totalColors = 0;
+            paletteNames.forEach(name => {
+                totalColors += Object.keys(palettes[name]).length;
+            });
+
+            // Render stats
+            if (statsContainer) {
+                statsContainer.innerHTML = `
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700; line-height: 1;">${paletteNames.length}</div>
+                        <div style="font-size: 16px; opacity: 0.9; margin-top: 8px;">Color Palettes</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700; line-height: 1;">${totalColors}</div>
+                        <div style="font-size: 16px; opacity: 0.9; margin-top: 8px;">Total Shades</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700; line-height: 1;">5</div>
+                        <div style="font-size: 16px; opacity: 0.9; margin-top: 8px;">Semantic Categories</div>
+                    </div>
+                `;
+            }
+
+            // Create organized display by palette
+            let html = '';
+
+            paletteNames.forEach(paletteName => {
+                const palette = palettes[paletteName];
+                const shades = Object.keys(palette);
+
+                // Add palette heading
+                html += `
+                    <div style="grid-column: 1 / -1; margin-top: 30px; margin-bottom: 15px;">
+                        <h3 style="font-size: 20px; font-weight: 600; text-transform: capitalize; color: #333; margin: 0;">
+                            ${paletteName}
+                        </h3>
+                        <p style="color: #666; font-size: 14px; margin: 5px 0 0 0;">
+                            ${shades.length} shades
+                        </p>
+                    </div>
+                `;
+
+                // Add color swatches for this palette
+                shades.forEach(shade => {
+                    const colorData = palette[shade];
+                    html += `
+                        <div class="ds-color-swatch">
+                            <div class="ds-color-box" style="background: ${colorData.value}; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>
+                            <div class="ds-color-name">${paletteName}-${shade}</div>
+                            <div class="ds-color-value">${colorData.value}</div>
+                        </div>
+                    `;
+                });
+            });
+
+            container.innerHTML = html;
+
+            // Update code example with semantic colors
+            const codeBlock = document.querySelector('#colors-code code');
+            if (codeBlock) {
+                const semanticColors = colorTokens.colors.semantic;
+                let cssExample = '/* Color Palettes - Raw Values */\n\n';
+
+                // Show first palette as example
+                const firstPalette = palettes[paletteNames[0]];
+                Object.keys(firstPalette).slice(0, 5).forEach(shade => {
+                    cssExample += `--${paletteNames[0]}-${shade}: ${firstPalette[shade].value};\n`;
+                });
+
+                cssExample += '\n/* Semantic Colors - Recommended for Use */\n\n';
+
+                // Show semantic colors
+                if (semanticColors) {
+                    Object.keys(semanticColors).forEach(category => {
+                        cssExample += `/* ${category.charAt(0).toUpperCase() + category.slice(1)} */\n`;
+                        const categoryColors = semanticColors[category];
+                        Object.keys(categoryColors).slice(0, 3).forEach(level => {
+                            cssExample += `--color-${category}-${level}: ${categoryColors[level].description || 'color value'};\n`;
+                        });
+                        cssExample += '\n';
+                    });
+                }
+
+                codeBlock.textContent = cssExample;
+            }
+        }
+
+        // Render typography from design tokens
+        function renderTypography() {
+            const container = document.getElementById('typography-samples');
+            const codeBlock = document.getElementById('typography-css');
+            const typographyTokens = designSystemData.tokens.typography;
+
+            if (!typographyTokens || !typographyTokens.typography) {
+                container.innerHTML = '<p>Loading typography...</p>';
+                return;
+            }
+
+            const textStyles = typographyTokens.typography.textStyles;
+            const fontSizes = typographyTokens.typography.fontSizes;
+
+            // Display text styles
+            const styles = Object.keys(textStyles);
+            container.innerHTML = styles.map(styleName => {
+                const style = textStyles[styleName];
+                return `
+                    <div class="ds-typography-sample">
+                        <strong>${styleName}:</strong>
+                        ${style.fontSize ? `${style.fontSize.value}, ` : ''}
+                        ${style.fontWeight ? `weight: ${style.fontWeight.value}` : ''}
+                        <p style="margin-top: 8px;">${style.description || ''}</p>
+                    </div>
+                `;
+            }).join('');
+
+            // Generate CSS code example
+            codeBlock.textContent = styles.map(styleName => {
+                const style = textStyles[styleName];
+                return `/* ${styleName} */\n.${styleName} {\n  font-size: ${style.fontSize?.value || 'inherit'};\n  font-weight: ${style.fontWeight?.value || 'inherit'};\n  line-height: ${style.lineHeight?.value || 'inherit'};\n}`;
+            }).join('\n\n');
+        }
+
+        // Render icons from components
+        function renderIcons() {
+            const container = document.getElementById('icon-grid');
+            const atoms = designSystemData.components.atoms;
+
+            if (!atoms || !atoms.icons) {
+                container.innerHTML = '<p>Loading icons...</p>';
+                return;
+            }
+
+            const icons = atoms.icons;
+            container.innerHTML = icons.map(icon => `
+                <div class="ds-icon-item">
+                    <div>${icon.html || ''}</div>
+                    <div class="ds-icon-name">${icon.name || icon.id}</div>
+                </div>
+            `).join('');
+        }
+
+        // Render buttons from components
+        function renderButtons() {
+            const container = document.getElementById('button-examples');
+            const codeBlock = document.getElementById('buttons-html');
+            const atoms = designSystemData.components.atoms;
+
+            if (!atoms || !atoms.buttons) {
+                container.innerHTML = '<p>Loading buttons...</p>';
+                return;
+            }
+
+            const buttons = atoms.buttons;
+
+            // Render button previews
+            container.innerHTML = buttons.map(btn => btn.html).join('\n');
+
+            // Render button code
+            codeBlock.textContent = buttons.map((btn, idx) =>
+                `<!-- ${btn.name} -->\n${btn.html}`
+            ).join('\n\n');
+        }
+
+        // Render product cards
+        function renderProductCards() {
+            const container = document.getElementById('product-cards-container');
+            const organisms = designSystemData.components.organisms;
+
+            if (!organisms || !organisms.cards) {
+                container.innerHTML = '<p>Loading cards...</p>';
+                return;
+            }
+
+            // Show all cards in a grid
+            container.innerHTML = organisms.cards.map(card => card.html).join('');
+        }
+
+        // Render breadcrumbs
+        function renderBreadcrumbs() {
+            const container = document.getElementById('breadcrumbs-examples');
+            const codeBlock = document.getElementById('breadcrumbs-html');
+            const molecules = designSystemData.components.molecules;
+
+            if (!molecules || !molecules.breadcrumbs || molecules.breadcrumbs.length === 0) {
+                container.innerHTML = '<p style="color: #888; font-style: italic;">No breadcrumb components extracted yet</p>';
+                return;
+            }
+
+            // Render breadcrumb preview
+            container.innerHTML = molecules.breadcrumbs.map(breadcrumb => breadcrumb.html).join('<br>');
+
+            // Render breadcrumb code
+            codeBlock.textContent = molecules.breadcrumbs.map((breadcrumb, idx) =>
+                `<!-- ${breadcrumb.name} -->\n${breadcrumb.html}`
+            ).join('\n\n');
+        }
+
+        // Render search fields
+        function renderSearchFields() {
+            const container = document.getElementById('search-examples');
+            const codeBlock = document.getElementById('search-html');
+            const molecules = designSystemData.components.molecules;
+
+            if (!molecules || !molecules.searchFields || molecules.searchFields.length === 0) {
+                container.innerHTML = '<p style="color: #888; font-style: italic;">No search field components extracted yet</p>';
+                return;
+            }
+
+            // Render search field preview
+            container.innerHTML = molecules.searchFields.map(search => search.html).join('<br>');
+
+            // Render search field code
+            codeBlock.textContent = molecules.searchFields.map((search, idx) =>
+                `<!-- ${search.name} -->\n${search.html}`
+            ).join('\n\n');
+        }
+
+        // Render dropdowns
+        function renderDropdowns() {
+            const container = document.getElementById('dropdown-examples');
+            const codeBlock = document.getElementById('dropdown-html');
+            const molecules = designSystemData.components.molecules;
+
+            if (!molecules || !molecules.dropdowns || molecules.dropdowns.length === 0) {
+                container.innerHTML = '<p style="color: #888; font-style: italic;">No dropdown components extracted yet</p>';
+                return;
+            }
+
+            // Render dropdown preview
+            container.innerHTML = molecules.dropdowns.map(dropdown => dropdown.html).join('<br>');
+
+            // Render dropdown code
+            codeBlock.textContent = molecules.dropdowns.map((dropdown, idx) =>
+                `<!-- ${dropdown.name} -->\n${dropdown.html}`
+            ).join('\n\n');
+        }
+
+        // Render header
+        function renderHeader() {
+            const container = document.getElementById('header-examples');
+            const codeBlock = document.getElementById('header-html');
+            const organisms = designSystemData.components.organisms;
+
+            if (!organisms || !organisms.headers || organisms.headers.length === 0) {
+                container.innerHTML = '<p style="color: #888; font-style: italic;">No header components extracted yet</p>';
+                return;
+            }
+
+            // Render header preview
+            container.innerHTML = organisms.headers.map(header => header.html).join('<br>');
+
+            // Render header code
+            codeBlock.textContent = organisms.headers.map((header, idx) =>
+                `<!-- ${header.name} -->\n${header.html}`
+            ).join('\n\n');
+        }
+
+        // Tab switching
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('ds-tab')) {
+                const tabName = e.target.dataset.tab;
+                const parent = e.target.closest('.ds-component-card') || document;
+
+                // Update active tab
+                parent.querySelectorAll('.ds-tab').forEach(tab => tab.classList.remove('active'));
+                e.target.classList.add('active');
+
+                // Update active content
+                parent.querySelectorAll('.ds-tab-content').forEach(content => {
+                    if (content.id === tabName) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+
+                // Re-highlight code
+                Prism.highlightAll();
+            }
+        });
+
+        // Copy to clipboard
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('component-search').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.ds-component-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth scroll for navigation - enhanced version
+        function initNavigation() {
+            const navLinks = document.querySelectorAll('.ds-doc-nav-link');
+            const sections = document.querySelectorAll('[id]');
+            const mainContent = document.querySelector('.ds-doc-main');
+
+            // Handle navigation clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const target = document.querySelector(targetId);
+
+                    if (target) {
+                        // Smooth scroll with offset for fixed header
+                        const targetPosition = target.offsetTop - 20;
+                        mainContent.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Update active link immediately
+                        updateActiveNavLink(targetId);
+                    }
+                });
+            });
+
+            // Scroll spy - update active link based on scroll position
+            let ticking = false;
+            mainContent.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateActiveNavOnScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+
+        // Update active navigation link
+        function updateActiveNavLink(targetId) {
+            document.querySelectorAll('.ds-doc-nav-link').forEach(link => {
+                if (link.getAttribute('href') === targetId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Update active nav based on scroll position (scroll spy)
+        function updateActiveNavOnScroll() {
+            const mainContent = document.querySelector('.ds-doc-main');
+            const scrollPosition = mainContent.scrollTop + 100; // Offset for better UX
+
+            const sections = [
+                'introduction', 'colors', 'typography', 'icons',
+                'buttons', 'breadcrumbs', 'search-field', 'dropdown',
+                'header', 'product-cards'
+            ];
+
+            let currentSection = 'introduction';
+
+            for (const sectionId of sections) {
+                const section = document.getElementById(sectionId);
+                if (section && section.offsetTop <= scrollPosition) {
+                    currentSection = sectionId;
+                }
+            }
+
+            updateActiveNavLink('#' + currentSection);
+        }
+
+        // Escape HTML for code display
+        function escapeHtml(html) {
+            const div = document.createElement('div');
+            div.textContent = html;
+            return div.innerHTML;
+        }
+
+        // Initialize everything after components load
+        async function init() {
+            await loadComponents();
+            // Give the page a moment to render
+            setTimeout(() => {
+                initNavigation();
+                console.log('Navigation initialized');
+            }, 100);
+        }
+
+        // Start initialization
+        init();
+    </script>
+</body>
+</html>

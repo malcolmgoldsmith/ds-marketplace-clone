@@ -1,0 +1,121 @@
+{
+  "$schema": "https://schemas.opendesignsystems.org/token/v1.0.0",
+  "colors": {
+    "palette": {
+      "midnight": {
+        "description": "Primary blue shades - core brand color",
+        "80": { "value": "rgb(0, 93, 186)", "type": "color" },
+        "40": { "value": "rgb(0, 102, 205)", "type": "color" },
+        "20": { "value": "rgb(1, 112, 224)", "type": "color" }
+      },
+      "carbon": {
+        "description": "Dark gray shades - complementary UI elements",
+        "500": { "value": "rgb(34, 42, 52)", "type": "color" },
+        "300": { "value": "rgb(50, 62, 75)", "type": "color" },
+        "100": { "value": "rgb(65, 81, 99)", "type": "color" },
+        "40": { "value": "rgb(82, 99, 123)", "type": "color" }
+      },
+      "mercury": {
+        "description": "Light gray shades - complementary backgrounds and borders",
+        "900": { "value": "rgb(106, 129, 158)", "type": "color" },
+        "100": { "value": "rgb(201, 209, 219)", "type": "color" },
+        "80": { "value": "rgb(212, 219, 227)", "type": "color" },
+        "40": { "value": "rgb(224, 229, 233)", "type": "color" },
+        "20": { "value": "rgb(234, 238, 242)", "type": "color" },
+        "10": { "value": "rgb(247, 249, 250)", "type": "color" }
+      },
+      "fire": {
+        "description": "Red shades - error and warning states",
+        "100": { "value": "rgb(166, 2, 13)", "type": "color" },
+        "80": { "value": "rgb(184, 2, 14)", "type": "color" },
+        "20": { "value": "rgb(224, 2, 19)", "type": "color" }
+      },
+      "rust": {
+        "description": "Orange-brown shades - warning states",
+        "300": { "value": "rgb(118, 77, 1)", "type": "color" }
+      },
+      "shadow": {
+        "description": "Neutral dark shades - text and borders",
+        "600": { "value": "rgb(31, 31, 31)", "type": "color" },
+        "100": { "value": "rgb(82, 82, 82)", "type": "color" },
+        "20": { "value": "rgb(112, 112, 112)", "type": "color" }
+      },
+      "ash": {
+        "description": "Neutral light shades - backgrounds and text",
+        "500": { "value": "rgb(173, 173, 173)", "type": "color" },
+        "40": { "value": "rgb(235, 235, 235)", "type": "color" },
+        "20": { "value": "rgb(245, 245, 245)", "type": "color" },
+        "10": { "value": "rgb(255, 255, 255)", "type": "color" }
+      }
+    },
+    "semantic": {
+      "primary": {
+        "description": "Primary brand colors used for main CTAs and brand elements",
+        "60": {
+          "value": "{colors.palette.midnight.80}",
+          "description": "Primary hover state",
+          "type": "color"
+        },
+        "50": {
+          "value": "{colors.palette.midnight.40}",
+          "description": "Primary default state",
+          "type": "color"
+        },
+        "40": {
+          "value": "{colors.palette.midnight.20}",
+          "description": "Primary light variant",
+          "type": "color"
+        }
+      },
+      "complementary": {
+        "description": "Complementary colors for UI elements and backgrounds",
+        "120": { "value": "{colors.palette.carbon.500}", "description": "Darkest complementary", "type": "color" },
+        "90": { "value": "{colors.palette.carbon.100}", "description": "Dark complementary", "type": "color" },
+        "70": { "value": "{colors.palette.carbon.40}", "description": "Medium dark complementary", "type": "color" },
+        "60": { "value": "{colors.palette.mercury.900}", "description": "Medium complementary", "type": "color" },
+        "50": { "value": "{colors.palette.mercury.100}", "description": "Medium light complementary", "type": "color" },
+        "40": { "value": "{colors.palette.mercury.80}", "description": "Light complementary", "type": "color" },
+        "30": { "value": "{colors.palette.mercury.40}", "description": "Lighter complementary", "type": "color" },
+        "20": { "value": "{colors.palette.mercury.20}", "description": "Very light complementary", "type": "color" },
+        "10": { "value": "{colors.palette.mercury.10}", "description": "Lightest complementary", "type": "color" }
+      },
+      "neutral": {
+        "description": "Neutral colors for text, backgrounds, and borders",
+        "70": { "value": "{colors.palette.shadow.600}", "description": "Darkest neutral text", "type": "color" },
+        "60": { "value": "{colors.palette.shadow.100}", "description": "Dark neutral text", "type": "color" },
+        "50": { "value": "{colors.palette.shadow.20}", "description": "Medium neutral text", "type": "color" },
+        "30": { "value": "{colors.palette.ash.40}", "description": "Light neutral background", "type": "color" },
+        "20": { "value": "{colors.palette.ash.20}", "description": "Very light neutral background", "type": "color" },
+        "10": { "value": "{colors.palette.ash.10}", "description": "White background", "type": "color" }
+      },
+      "error": {
+        "description": "Error state colors for validation and alerts",
+        "40": { "value": "{colors.palette.fire.100}", "description": "Error dark", "type": "color" },
+        "30": { "value": "{colors.palette.fire.20}", "description": "Error medium", "type": "color" },
+        "20": { "value": "{colors.palette.fire.80}", "description": "Error default", "type": "color" }
+      },
+      "warning": {
+        "description": "Warning state colors",
+        "text": { "value": "{colors.palette.rust.300}", "description": "Warning text", "type": "color" }
+      }
+    },
+    "text": {
+      "description": "Text-specific color tokens for better semantic meaning",
+      "primary": {
+        "default": { "value": "{colors.palette.midnight.40}", "type": "color" }
+      },
+      "complementary": {
+        "lightest": { "value": "{colors.palette.mercury.10}", "type": "color" },
+        "darkest": { "value": "{colors.palette.mercury.900}", "type": "color" },
+        "dark": { "value": "{colors.palette.carbon.300}", "type": "color" }
+      },
+      "neutral": {
+        "white": { "value": "{colors.palette.ash.10}", "type": "color" },
+        "lightest": { "value": "{colors.palette.ash.20}", "type": "color" },
+        "medium": { "value": "{colors.palette.ash.500}", "type": "color" },
+        "dark": { "value": "{colors.palette.shadow.20}", "type": "color" },
+        "darkest": { "value": "{colors.palette.shadow.600}", "type": "color" }
+      }
+    }
+  }
+}

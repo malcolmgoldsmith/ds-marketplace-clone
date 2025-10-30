@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.opendesignsystems.org/token/v1.0.0",
+  "shadows": {
+    "none": { "value": "none", "type": "shadow", "description": "No shadow" },
+    "sm": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.05)",
+      "type": "shadow",
+      "description": "Small shadow"
+    },
+    "base": {
+      "value": "0 3px 6px rgba(var(--color-neutral-50), 0.16)",
+      "type": "shadow",
+      "description": "Base shadow used for dropdowns and cards"
+    },
+    "md": {
+      "value": "0 4px 8px rgba(0, 0, 0, 0.1)",
+      "type": "shadow",
+      "description": "Medium shadow"
+    },
+    "lg": {
+      "value": "0 8px 16px rgba(0, 0, 0, 0.15)",
+      "type": "shadow",
+      "description": "Large shadow"
+    },
+    "xl": {
+      "value": "0 12px 24px rgba(0, 0, 0, 0.2)",
+      "type": "shadow",
+      "description": "Extra large shadow"
+    }
+  },
+  "borders": {
+    "width": {
+      "none": { "value": "0px", "type": "dimension", "description": "No border" },
+      "thin": { "value": "1px", "type": "dimension", "description": "Thin border" },
+      "medium": { "value": "2px", "type": "dimension", "description": "Medium border" },
+      "thick": { "value": "4px", "type": "dimension", "description": "Thick border" }
+    },
+    "radius": {
+      "none": { "value": "0px", "type": "dimension", "description": "No border radius" },
+      "sm": { "value": "2px", "type": "dimension", "description": "Small border radius" },
+      "base": { "value": "4px", "type": "dimension", "description": "Base border radius" },
+      "md": { "value": "6px", "type": "dimension", "description": "Medium border radius" },
+      "lg": { "value": "8px", "type": "dimension", "description": "Large border radius" },
+      "xl": { "value": "12px", "type": "dimension", "description": "Extra large border radius" },
+      "full": { "value": "9999px", "type": "dimension", "description": "Full border radius (pill shape)" }
+    }
+  },
+  "opacity": {
+    "0": { "value": "0", "type": "number", "description": "Fully transparent" },
+    "10": { "value": "0.1", "type": "number", "description": "10% opacity" },
+    "20": { "value": "0.2", "type": "number", "description": "20% opacity" },
+    "30": { "value": "0.3", "type": "number", "description": "30% opacity" },
+    "40": { "value": "0.4", "type": "number", "description": "40% opacity" },
+    "50": { "value": "0.5", "type": "number", "description": "50% opacity" },
+    "60": { "value": "0.6", "type": "number", "description": "60% opacity" },
+    "70": { "value": "0.7", "type": "number", "description": "70% opacity" },
+    "80": { "value": "0.8", "type": "number", "description": "80% opacity" },
+    "90": { "value": "0.9", "type": "number", "description": "90% opacity" },
+    "100": { "value": "1", "type": "number", "description": "Fully opaque" }
+  },
+  "zIndex": {
+    "base": { "value": "1", "type": "number", "description": "Base z-index" },
+    "dropdown": { "value": "2", "type": "number", "description": "Dropdown z-index" },
+    "sticky": { "value": "25", "type": "number", "description": "Sticky elements" },
+    "fixed": { "value": "950", "type": "number", "description": "Fixed elements like toast" },
+    "overlay": { "value": "1000", "type": "number", "description": "Overlay/backdrop z-index" },
+    "modal": { "value": "1100", "type": "number", "description": "Modal z-index" },
+    "popover": { "value": "1200", "type": "number", "description": "Popover z-index" },
+    "tooltip": { "value": "1300", "type": "number", "description": "Tooltip z-index" },
+    "datepicker": { "value": "2000", "type": "number", "description": "Datepicker z-index" }
+  },
+  "transitions": {
+    "duration": {
+      "fast": { "value": "150ms", "type": "duration", "description": "Fast transition" },
+      "base": { "value": "300ms", "type": "duration", "description": "Base transition duration" },
+      "slow": { "value": "500ms", "type": "duration", "description": "Slow transition" }
+    },
+    "easing": {
+      "linear": { "value": "linear", "type": "cubicBezier", "description": "Linear easing" },
+      "easeIn": { "value": "cubic-bezier(0.4, 0, 1, 1)", "type": "cubicBezier", "description": "Ease in" },
+      "easeOut": { "value": "cubic-bezier(0, 0, 0.2, 1)", "type": "cubicBezier", "description": "Ease out" },
+      "easeInOut": { "value": "cubic-bezier(0.4, 0, 0.2, 1)", "type": "cubicBezier", "description": "Ease in and out" },
+      "standard": { "value": "cubic-bezier(0.25, 0.8, 0.25, 1)", "type": "cubicBezier", "description": "Standard easing" }
+    }
+  }
+}

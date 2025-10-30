@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 1: Minimal - Black Friday Sale</title>
+
+    <link rel="stylesheet" href="../css/black-friday-common.css">
+    <link rel="stylesheet" href="../css/black-friday-v1.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background: #f7f9fa;
+        }
+
+        .product-grid {
+            max-width: 1440px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 27px;
+        }
+
+        .ds-card {
+            width: 352px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ds-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .ds-card-outline {
+            border: 1px solid #e0e0e0;
+        }
+
+        .ds-card .ds-card__image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ds-card .card-content {
+            padding: 20px;
+        }
+
+        .ds-card .card-category-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .ds-card .ds-chips {
+            padding: 4px 12px;
+            background: #e8f4fd;
+            border-radius: 16px;
+            font-size: 12px;
+            color: #0066cc;
+        }
+
+        .ds-card .card-title {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="bf-v1-container"></div>
+
+    <div class="product-grid" id="v1-products">
+        <!-- Products populated by JavaScript -->
+    </div>
+
+    <script src="../js/countdown-timer.js"></script>
+    <script>
+        // Load V1 component
+        fetch('../components/black-friday-v1.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('bf-v1-container').innerHTML = html;
+            });
+
+        // Sample products
+        const products = [
+            {html: '<div class="ds-card ds-card-outline"><div><img class="ds-card__image" src="https://marketplace.uds.lenovo.com/media/microsoft_thumbnail.svg"><div class="card-content"><div class="card-category-container"><span class="ds-chips">Productivity</span></div><h2 class="card-title">Microsoft 365</h2></div></div></div>'},
+            {html: '<div class="ds-card ds-card-outline"><div><img class="ds-card__image" src="https://marketplace.uds.lenovo.com/media/norton_partner.svg"><div class="card-content"><div class="card-category-container"><span class="ds-chips">Security</span></div><h2 class="card-title">Norton Security</h2></div></div></div>'},
+        ];
+
+        products.forEach(p => {
+            const div = document.createElement('div');
+            div.innerHTML = p.html;
+            document.getElementById('v1-products').appendChild(div.firstElementChild);
+        });
+    </script>
+</body>
+</html>

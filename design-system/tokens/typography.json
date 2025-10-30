@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schemas.opendesignsystems.org/token/v1.0.0",
+  "typography": {
+    "fontFamilies": {
+      "primary": {
+        "value": "Lato, sans-serif, Helvetica, Arial",
+        "type": "fontFamily",
+        "description": "Primary font family for body text and UI"
+      },
+      "fallback": {
+        "value": "Arial, sans-serif",
+        "type": "fontFamily",
+        "description": "Fallback font family"
+      }
+    },
+    "fontWeights": {
+      "regular": { "value": "400", "type": "fontWeight", "description": "Regular font weight" },
+      "bold": { "value": "700", "type": "fontWeight", "description": "Bold font weight" }
+    },
+    "fontSizes": {
+      "xs": { "value": "12px", "type": "dimension", "description": "Extra small text" },
+      "sm": { "value": "14px", "type": "dimension", "description": "Small text" },
+      "base": { "value": "16px", "type": "dimension", "description": "Base/body text" },
+      "lg": { "value": "18px", "type": "dimension", "description": "Large text" },
+      "xl": { "value": "20px", "type": "dimension", "description": "Extra large text" },
+      "2xl": { "value": "24px", "type": "dimension", "description": "2X large text" },
+      "3xl": { "value": "30px", "type": "dimension", "description": "3X large text" },
+      "4xl": { "value": "36px", "type": "dimension", "description": "4X large text" },
+      "5xl": { "value": "48px", "type": "dimension", "description": "5X large text" }
+    },
+    "lineHeights": {
+      "none": { "value": "0", "type": "lineHeight", "description": "No line height" },
+      "tight": { "value": "16px", "type": "lineHeight", "description": "Tight line height" },
+      "normal": { "value": "17px", "type": "lineHeight", "description": "Normal line height" },
+      "relaxed": { "value": "24px", "type": "lineHeight", "description": "Relaxed line height" },
+      "loose": { "value": "32px", "type": "lineHeight", "description": "Loose line height" }
+    },
+    "textStyles": {
+      "h1": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.5xl}" },
+        "fontWeight": { "value": "{typography.fontWeights.bold}" },
+        "lineHeight": { "value": "{typography.lineHeights.loose}" },
+        "description": "Heading 1 style"
+      },
+      "h2": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.4xl}" },
+        "fontWeight": { "value": "{typography.fontWeights.bold}" },
+        "lineHeight": { "value": "{typography.lineHeights.loose}" },
+        "description": "Heading 2 style"
+      },
+      "h3": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.3xl}" },
+        "fontWeight": { "value": "{typography.fontWeights.bold}" },
+        "lineHeight": { "value": "{typography.lineHeights.relaxed}" },
+        "description": "Heading 3 style"
+      },
+      "h4": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.2xl}" },
+        "fontWeight": { "value": "{typography.fontWeights.bold}" },
+        "lineHeight": { "value": "{typography.lineHeights.relaxed}" },
+        "description": "Heading 4 style"
+      },
+      "h5": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.xl}" },
+        "fontWeight": { "value": "{typography.fontWeights.bold}" },
+        "lineHeight": { "value": "{typography.lineHeights.relaxed}" },
+        "description": "Heading 5 style"
+      },
+      "h6": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.lg}" },
+        "fontWeight": { "value": "{typography.fontWeights.bold}" },
+        "lineHeight": { "value": "{typography.lineHeights.relaxed}" },
+        "description": "Heading 6 style"
+      },
+      "body": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.sm}" },
+        "fontWeight": { "value": "{typography.fontWeights.regular}" },
+        "lineHeight": { "value": "{typography.lineHeights.normal}" },
+        "description": "Body text style"
+      },
+      "bodyLarge": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.base}" },
+        "fontWeight": { "value": "{typography.fontWeights.regular}" },
+        "lineHeight": { "value": "{typography.lineHeights.relaxed}" },
+        "description": "Large body text style"
+      },
+      "caption": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.xs}" },
+        "fontWeight": { "value": "{typography.fontWeights.regular}" },
+        "lineHeight": { "value": "{typography.lineHeights.tight}" },
+        "description": "Caption text style"
+      },
+      "button": {
+        "fontFamily": { "value": "{typography.fontFamilies.primary}" },
+        "fontSize": { "value": "{typography.fontSizes.sm}" },
+        "fontWeight": { "value": "{typography.fontWeights.regular}" },
+        "lineHeight": { "value": "{typography.lineHeights.tight}" },
+        "description": "Button text style"
+      }
+    }
+  }
+}

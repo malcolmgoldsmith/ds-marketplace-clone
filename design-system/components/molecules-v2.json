@@ -1,0 +1,25 @@
+{
+  "extractedAt": "2025-10-21T14:43:22.670Z",
+  "source": "Lenovo UDS Marketplace",
+  "dropdowns": [],
+  "searchFields": [
+    {
+      "id": "search-field-1",
+      "name": "Search Field 1",
+      "html": "<ds-search-field searchtype=\"icon\" class=\"aria-disabled=\"false\"><!----><!----><input type=\"text\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" class=\"ds-field__input ds-search__input placeholder=\"Enter product name\" aria-label=\"Search\" aria-disabled=\"false\" style=\"\"><!----><button type=\"button\" dstooltip=\"\" ds-icon-button=\"\" btniconname=\"icon-search\" btniconsize=\"sm\" btnsize=\"md\" aria-label=\"Submit search\" class=\"ds-btn ds-btn--md ds-btn--with-icon theme-uds-light><ds-icon aria-hidden=\"true\"><!----><svg-icon role=\"img\" aria-hidden=\"true\" size=\"lg\" class=\"theme-uds-light ds-icon undefined svg-icon-icon-search\" aria-label=\"icon-search-icon\" style=\"font-size: 24px;\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fit=\"\" height=\"100%\" width=\"100%\" preserveAspectRatio=\"xMidYMid meet\" focusable=\"false\"><path d=\"M21.39 20.32l-4.72-4.72a8.28 8.28 0 10-1 1l4.72 4.72zM3.7 10.42a6.72 6.72 0 116.72 6.72 6.72 6.72 0 01-6.72-6.72z\"></path><path d=\"M15.64 10.42h-1.4a3.83 3.83 0 00-3.82-3.82V5.2a5.22 5.22 0 015.22 5.22z\"></path></svg></svg-icon></ds-icon><span class=\"ds-btn__text\"></span><!----></button><!----><!----></div></ds-search-field>",
+      "framework": "Angular (cleaned)",
+      "category": "input"
+    }
+  ],
+  "breadcrumbs": [
+    {
+      "id": "breadcrumb-1",
+      "name": "Breadcrumb 1",
+      "html": "<ds-breadcrumbs><nav class=\"theme-uds-light ds-breadcrumbs\" aria-label=\"Breadcrumbs\"><div class=\"ds-breadcrumbs__container><!----><!----><!----></ol><div class=\"ds-breadcrumbs__link--last\"> Home </div></div><!----></nav></ds-breadcrumbs>",
+      "framework": "Angular (cleaned)",
+      "category": "navigation"
+    }
+  ],
+  "formFields": [],
+  "tabs": []
+}

@@ -1,0 +1,333 @@
+/* Black Friday Version 2: Standard - Enhanced Hero & Product Badges */
+
+/* Hero Banner */
+.bf-v2-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #5d2661 50%, #c8102e 100%);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background effect */
+.bf-v2-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: drift 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.bf-v2-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bf-v2-eyebrow {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.bf-v2-headline {
+  color: white;
+  font-size: 56px;
+  font-weight: 900;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.bf-v2-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 20px;
+  margin: 0 0 40px 0;
+  font-weight: 300;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Countdown Display */
+.bf-v2-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.bf-v2-countdown-item {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bf-v2-countdown-number {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.bf-v2-countdown-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 8px;
+  display: block;
+}
+
+/* CTA Buttons */
+.bf-v2-cta {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bf-v2-cta .btn-primary {
+  background: white;
+  color: #5d2661;
+  border: none;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bf-v2-cta .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  background: #f0f0f0;
+}
+
+.bf-v2-cta .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 14px 38px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bf-v2-cta .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Sale Live State */
+.bf-v2-hero .sale-live-v2 {
+  color: white;
+  font-size: 72px;
+  font-weight: 900;
+  margin: 40px 0;
+  animation: pulse 1.5s infinite, glow 2s ease-in-out infinite;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+  50% { text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6); }
+}
+
+/* Featured Products Grid - V2 Specific */
+.bf-v2-products-section {
+  max-width: 1440px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.bf-v2-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.bf-v2-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.bf-v2-section-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+/* Product Card Countdown Badge */
+.product-countdown-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #c8102e, #5d2661);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.product-countdown-badge .badge-time {
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  margin-top: 2px;
+}
+
+/* Enhanced Featured Cards for V2 */
+.bf-v2-products-section .ds-card-featured {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #5d2661, #c8102e) border-box;
+  transition: all 0.3s ease;
+}
+
+.bf-v2-products-section .ds-card-featured:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(93, 38, 97, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bf-v2-headline {
+    font-size: 36px;
+  }
+
+  .bf-v2-subtitle {
+    font-size: 16px;
+  }
+
+  .bf-v2-countdown {
+    gap: 12px;
+  }
+
+  .bf-v2-countdown-item {
+    padding: 16px 12px;
+    min-width: 70px;
+  }
+
+  .bf-v2-countdown-number {
+    font-size: 32px;
+  }
+
+  .bf-v2-countdown-label {
+    font-size: 10px;
+  }
+
+  .bf-v2-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bf-v2-cta .btn-primary,
+  .bf-v2-cta .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .bf-v2-hero .sale-live-v2 {
+    font-size: 48px;
+  }
+
+  .bf-v2-section-title {
+    font-size: 28px;
+  }
+
+  .bf-v2-section-subtitle {
+    font-size: 16px;
+  }
+
+  .bf-v2-hero {
+    padding: 40px 16px;
+  }
+
+  .bf-v2-products-section {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bf-v2-headline {
+    font-size: 28px;
+  }
+
+  .bf-v2-subtitle {
+    font-size: 14px;
+  }
+
+  .bf-v2-countdown {
+    gap: 8px;
+  }
+
+  .bf-v2-countdown-item {
+    padding: 12px 8px;
+    min-width: 60px;
+  }
+
+  .bf-v2-countdown-number {
+    font-size: 28px;
+  }
+
+  .bf-v2-cta .btn-primary,
+  .bf-v2-cta .btn-secondary {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .bf-v2-section-title {
+    font-size: 24px;
+  }
+
+  .bf-v2-section-subtitle {
+    font-size: 14px;
+  }
+}

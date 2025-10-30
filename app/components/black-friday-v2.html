@@ -1,0 +1,115 @@
+<!-- Black Friday Version 2: Standard - Enhanced Hero Banner Component -->
+<div class="bf-v2-hero">
+    <div class="bf-v2-hero-content">
+        <span class="bf-v2-eyebrow">Limited Time Only</span>
+
+        <h1 class="bf-v2-headline">Black Friday Deals</h1>
+
+        <p class="bf-v2-subtitle">
+            Unbeatable prices on premium software and services.
+            Don't miss out on these exclusive offers!
+        </p>
+
+        <!-- Countdown Timer -->
+        <div class="bf-v2-countdown" id="v2-countdown">
+            <div class="bf-v2-countdown-item">
+                <span class="bf-v2-countdown-number" id="v2-days">00</span>
+                <span class="bf-v2-countdown-label">Days</span>
+            </div>
+            <div class="bf-v2-countdown-item">
+                <span class="bf-v2-countdown-number" id="v2-hours">00</span>
+                <span class="bf-v2-countdown-label">Hours</span>
+            </div>
+            <div class="bf-v2-countdown-item">
+                <span class="bf-v2-countdown-number" id="v2-minutes">01</span>
+                <span class="bf-v2-countdown-label">Minutes</span>
+            </div>
+            <div class="bf-v2-countdown-item">
+                <span class="bf-v2-countdown-number" id="v2-seconds">00</span>
+                <span class="bf-v2-countdown-label">Seconds</span>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="bf-v2-cta">
+            <button class="btn-primary" onclick="document.getElementById('v2-products').scrollIntoView({behavior: 'smooth'})">
+                Shop Deals Now
+            </button>
+            <button class="btn-secondary" onclick="alert('Email notifications coming soon!')">
+                Get Notified
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Products Section Header -->
+<div class="bf-v2-products-section">
+    <div class="bf-v2-section-header">
+        <h2 class="bf-v2-section-title">Featured Black Friday Deals</h2>
+        <p class="bf-v2-section-subtitle">Handpicked offers with exclusive discounts</p>
+    </div>
+</div>
+
+<script>
+// Initialize Version 2 countdown timer
+(function() {
+    // Main countdown timer
+    const mainTimer = window.BlackFridayTimers.create('v2-main', {
+        startOffset: 60000, // 1 minute
+        onTick: (time) => {
+            const pad = (num) => String(num).padStart(2, '0');
+            document.getElementById('v2-days').textContent = pad(time.days);
+            document.getElementById('v2-hours').textContent = pad(time.hours);
+            document.getElementById('v2-minutes').textContent = pad(time.minutes);
+            document.getElementById('v2-seconds').textContent = pad(time.seconds);
+
+            // Update product card badges
+            updateProductBadges(time);
+        },
+        onComplete: () => {
+            const hero = document.querySelector('.bf-v2-hero-content');
+            hero.innerHTML = `
+                <div class="sale-live-v2">
+                    🔥 SALE IS LIVE! 🔥
+                </div>
+                <p class="bf-v2-subtitle" style="margin-top: 30px;">
+                    Grab these incredible deals before they're gone!
+                </p>
+                <div class="bf-v2-cta">
+                    <button class="btn-primary" onclick="document.getElementById('v2-products').scrollIntoView({behavior: 'smooth'})">
+                        Shop Now
+                    </button>
+                </div>
+            `;
+
+            // Remove countdown badges from cards
+            document.querySelectorAll('.product-countdown-badge').forEach(badge => {
+                badge.innerHTML = '<div>🔥 LIVE NOW</div>';
+            });
+        }
+    });
+
+    // Function to update product card countdown badges
+    function updateProductBadges(time) {
+        const badges = document.querySelectorAll('.product-countdown-badge');
+        const pad = (num) => String(num).padStart(2, '0');
+
+        badges.forEach(badge => {
+            const timeDisplay = time.total > 3600000
+                ? `${pad(time.hours)}:${pad(time.minutes)}:${pad(time.seconds)}`
+                : `${pad(time.minutes)}:${pad(time.seconds)}`;
+
+            badge.innerHTML = `
+                <div>Ends In</div>
+                <div class="badge-time">${timeDisplay}</div>
+            `;
+        });
+    }
+
+    mainTimer.start();
+    console.log('✅ V2 countdown timer initialized');
+
+    // Store update function globally so products can call it when loaded
+    window.updateV2ProductBadges = updateProductBadges;
+})();
+</script>

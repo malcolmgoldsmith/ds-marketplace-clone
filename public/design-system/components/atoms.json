@@ -1,0 +1,192 @@
+{
+  "colors": [
+    {
+      "value": "rgba(0,0,0,0)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#000000",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#c0c0c0",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#222",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#b3d4fc",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#ccc",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#000",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#fff",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "#333",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-complementary-20)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-neutral-20)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-neutral-30)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-neutral-10)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgba(var(--color-neutral-50)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-neutral-70)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-neutral-60)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-neutral-text-40)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-complementary-60)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-primary-50)",
+      "usage": "Found in CSS"
+    },
+    {
+      "value": "rgb(var(--color-complementary-90)",
+      "usage": "Found in CSS"
+    }
+  ],
+  "typography": [
+    {
+      "property": "font-family: 'Lato';"
+    },
+    {
+      "property": "font-family: 'Lato';"
+    },
+    {
+      "property": "font-family:Lato;"
+    },
+    {
+      "property": "font-family:Lato;"
+    },
+    {
+      "property": "font-family:Lato,sans-serif,Helvetica,Arial;"
+    },
+    {
+      "property": "font-family:Lato,sans-serif,Helvetica,Arial}.custom-scroll[_ngcontent-ng-c434775611]{overflow:auto;"
+    },
+    {
+      "property": "font-family:Arial,sans-serif;"
+    },
+    {
+      "property": "font-family:Lato,sans-serif,Helvetica,Arial;"
+    },
+    {
+      "property": "font-family:Lato,sans-serif,Helvetica,Arial;"
+    },
+    {
+      "property": "font-family:Lato,sans-serif,Helvetica,Arial;"
+    }
+  ],
+  "buttons": [
+    {
+      "classes": "ds-btn ds-btn--md ds-btn--with-icon theme-uds-light ng-star-inserted",
+      "example": "<button class=\"ds-btn ds-btn--md ds-btn--with-icon theme-uds-light ng-star-inserted\">Button Text</button>"
+    },
+    {
+      "classes": "ds-header__additional-button ds-btn ds-btn--lg ds-btn--with-icon theme-uds-light ng-star-inserted",
+      "example": "<button class=\"ds-header__additional-button ds-btn ds-btn--lg ds-btn--with-icon theme-uds-light ng-star-inserted\">Button Text</button>"
+    },
+    {
+      "classes": "sign-in ds-btn ds-btn--loader ds-btn--sign-in theme-uds-light ng-star-inserted",
+      "example": "<button class=\"sign-in ds-btn ds-btn--loader ds-btn--sign-in theme-uds-light ng-star-inserted\">Button Text</button>"
+    },
+    {
+      "classes": "selected ds-btn ds-btn--md ds-btn--with-icon theme-uds-light",
+      "example": "<button class=\"selected ds-btn ds-btn--md ds-btn--with-icon theme-uds-light\">Button Text</button>"
+    },
+    {
+      "classes": "ds-btn ds-btn--md ds-btn--with-icon theme-uds-light",
+      "example": "<button class=\"ds-btn ds-btn--md ds-btn--with-icon theme-uds-light\">Button Text</button>"
+    },
+    {
+      "classes": "theme-uds-light ds-chips ds-counter-chips ng-star-inserted",
+      "example": "<button class=\"theme-uds-light ds-chips ds-counter-chips ng-star-inserted\">Button Text</button>"
+    },
+    {
+      "classes": "onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon",
+      "example": "<button class=\"onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon\">Button Text</button>"
+    },
+    {
+      "classes": "ot-close-icon",
+      "example": "<button class=\"ot-close-icon\">Button Text</button>"
+    },
+    {
+      "classes": "ot-link-btn back-btn-handler",
+      "example": "<button class=\"ot-link-btn back-btn-handler\">Button Text</button>"
+    },
+    {
+      "classes": "ot-pc-refuse-all-handler",
+      "example": "<button class=\"ot-pc-refuse-all-handler\">Button Text</button>"
+    },
+    {
+      "classes": "save-preference-btn-handler onetrust-close-btn-handler",
+      "example": "<button class=\"save-preference-btn-handler onetrust-close-btn-handler\">Button Text</button>"
+    }
+  ],
+  "icons": [
+    {
+      "name": "icon-us-icon",
+      "type": "svg"
+    },
+    {
+      "name": "icon-caret-16-icon",
+      "type": "svg"
+    },
+    {
+      "name": "icon-search-icon",
+      "type": "svg"
+    },
+    {
+      "name": "icon-shop-cart-icon",
+      "type": "svg"
+    },
+    {
+      "name": "icon-support-icon",
+      "type": "svg"
+    },
+    {
+      "name": "icon-layout-card-view-icon",
+      "type": "svg"
+    },
+    {
+      "name": "icon-sort-icon",
+      "type": "svg"
+    }
+  ]
+}

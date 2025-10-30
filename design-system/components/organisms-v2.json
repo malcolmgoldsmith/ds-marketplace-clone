@@ -1,0 +1,110 @@
+{
+  "extractedAt": "2025-10-21T14:43:22.672Z",
+  "source": "Lenovo UDS Marketplace",
+  "headers": [
+    {
+      "id": "header-1",
+      "name": "Header 1",
+      "html": "<ds-header inputrouterlink=\"/\" hassearchfield=\"true\"><div class=\"theme-uds-light ds-header ds-header-xl\"><div class=\"ds-header__container\"><div class=\"ds-header__logo\"><ds-link><a class=\"theme-uds-light ds-link href=\"/\"><img class=\"ds-header__logo__image src=\"https://marketplace.naea1.uds.lenovo.com/media/header-main-logo-image.svg\"><!----><!----></a><!----><!----><!----><!----></ds-link></div><div class=\"ds-header__tabs class=\"ds-header__tabs__nav\"><!----></nav></div><!----><!----><div class=\"ds-header__actions\"><app-core-country-dropdown-with-flags><div class=\"class=\"aria-disabled=\"false\"><!----><div data-test=\"dropdown-trigger-country\" role=\"combobox\" tabindex=\"0\" class=\"ds-dropdown__trigger\" aria-expanded=\"false\" aria-label=\"Country Dropdown\" aria-disabled=\"false\"><ds-icon size=\"xs\" class=\"ds-field__icon><!----><svg-icon role=\"img\" aria-hidden=\"true\" size=\"lg\" class=\"theme-uds-light ds-icon svg-icon-icon-us\" aria-label=\"icon-us-icon\" style=\"font-size: 16px;\"><svg xmlns=\"http://www....",
+      "framework": "Angular (cleaned)",
+      "category": "layout"
+    }
+  ],
+  "footers": [],
+  "cards": [
+    {
+      "id": "card-1",
+      "name": "Card 1",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Special Offers\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/special_offers_partner.svg\"><!----><!----><div class=\"card-content><!----><!----><h2 class=\"card-title> Save big with limited time offers, available now for your device </div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-2",
+      "name": "Card 2",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Microsoft\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/microsoft_thumbnail.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Productivity </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-3",
+      "name": "Card 3",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"McAfee\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/mcafee_partner.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Security </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-4",
+      "name": "Card 4",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Dropbox\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/dropbox_partner_thumbnail.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Storage </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-5",
+      "name": "Card 5",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Norton\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/norton_partner.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Privacy </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-6",
+      "name": "Card 6",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"CyberLink\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/cyberlink_partner.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Video editing </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-7",
+      "name": "Card 7",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Foxit\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/foxit_partner.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Productivity </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-8",
+      "name": "Card 8",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Absolute Security\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/Absolute_Partner_logo.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Anti-Theft </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-9",
+      "name": "Card 9",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Google Workspace\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/google_workspace_partner.png\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Collaboration </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-10",
+      "name": "Card 10",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Google Play Games\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/GooglePlayGames_Partner_thumbnail.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Entertainment </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    },
+    {
+      "id": "card-11",
+      "name": "Card 11",
+      "html": "<div tabindex=\"0\" role=\"region\" class=\"ds-card ds-card-outline theme-uds-light\" aria-label=\"Liner\"><!----><div class=\"content-card-box\"><!----><!----><img class=\"ds-card__image src=\"https://marketplace.uds.lenovo.com/media/liner_lenovo_thumbnail.svg\"><!----><!----><div class=\"card-content><!----><div class=\"card-category-container><ds-chips chipssize=\"sm\" maxwidth=\"170px\" class=\"><div class=\"theme-uds-light ds-chips ds-chips--sm ds-chips--readonly ds-chips--baseline class=\"ds-chips__content--label\" style=\"position: relative;\"><span dstruncate=\"\" class=\"ds-chips__content\" style=\"overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap;\"> Productivity </span></span></div>...",
+      "framework": "Angular (cleaned)",
+      "category": "content"
+    }
+  ],
+  "navigation": [
+    {
+      "id": "nav-1",
+      "name": "Navigation 1",
+      "html": "<nav aria-label=\"Main menu itens\" class=\"ds-header__tabs__nav\"><!----></nav>...",
+      "framework": "Angular (cleaned)",
+      "category": "navigation"
+    },
+    {
+      "id": "nav-2",
+      "name": "Navigation 2",
+      "html": "<nav class=\"theme-uds-light ds-breadcrumbs\" aria-label=\"Breadcrumbs\"><div class=\"ds-breadcrumbs__container><!----><!----><!----></ol><div class=\"ds-breadcrumbs__link--last\"> Home </div></div><!----></nav>...",
+      "framework": "Angular (cleaned)",
+      "category": "navigation"
+    }
+  ],
+  "modals": []
+}

@@ -1,0 +1,139 @@
+{
+  "mainNav": [
+    {
+      "text": "CakeVersion 1.4.0",
+      "href": "/",
+      "classes": "sc-enXOiP ekZTiz active"
+    },
+    {
+      "text": "Home",
+      "href": "/",
+      "classes": "sc-fqMPVk lPgnb active active"
+    },
+    {
+      "text": "Resources",
+      "href": "/resources",
+      "classes": "sc-fqMPVk lPgnb"
+    },
+    {
+      "text": "What's New",
+      "href": "/whats-new",
+      "classes": "sc-fqMPVk lPgnb"
+    },
+    {
+      "text": "Colors",
+      "href": "/foundations/colors",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Iconography",
+      "href": "/foundations/iconography",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Language & Grammar",
+      "href": "/foundations/language-grammar",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Alert",
+      "href": "/components/alert",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Accordion",
+      "href": "/components/accordion",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Avatar",
+      "href": "/components/avatar",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Badge",
+      "href": "/components/badge",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Breadcrumb",
+      "href": "/components/breadcrumb",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Button",
+      "href": "/components/button",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Canvas",
+      "href": "/components/canvas",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Checkbox",
+      "href": "/components/checkbox",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Chip",
+      "href": "/components/chip",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Radio",
+      "href": "/components/radio",
+      "classes": "sc-bURucN btEBWG"
+    },
+    {
+      "text": "Icon & Identity",
+      "href": "/subsystems/ai/icon-identity",
+      "classes": "sc-ijHjpV cODRqN"
+    }
+  ],
+  "sidebar": [],
+  "breadcrumbs": [],
+  "pageTitle": "Cake",
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Cake",
+      "id": ""
+    },
+    {
+      "level": "H2",
+      "text": "Ingredients for great design.",
+      "id": ""
+    },
+    {
+      "level": "H3",
+      "text": "Get started",
+      "id": ""
+    },
+    {
+      "level": "H3",
+      "text": "What's new",
+      "id": ""
+    },
+    {
+      "level": "H2",
+      "text": "Why build with Cake?",
+      "id": ""
+    },
+    {
+      "level": "H3",
+      "text": "Modularity",
+      "id": ""
+    },
+    {
+      "level": "H3",
+      "text": "Accessibility",
+      "id": ""
+    },
+    {
+      "level": "H3",
+      "text": "Brand",
+      "id": ""
+    }
+  ]
+}

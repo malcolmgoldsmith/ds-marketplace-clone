@@ -1,0 +1,103 @@
+{
+  "extractedAt": "2025-10-21T16:40:00.000Z",
+  "source": "Lenovo UDS Marketplace",
+  "headers": [
+    {
+      "id": "header-1",
+      "name": "Header 1",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header__container\"><div class=\"ds-header__logo\"><img src=\"https://marketplace.naea1.uds.lenovo.com/media/header-main-logo-image.svg\" alt=\"Lenovo\"></div></div></header>",
+      "framework": "HTML5",
+      "category": "layout"
+    }
+  ],
+  "footers": [],
+  "cards": [
+    {
+      "id": "card-1",
+      "name": "Special Offers",
+      "html": "<div class=\"ds-card ds-card-featured ds-card-featured--purple theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Special Offers\"><div class=\"content-card-box\"><div class=\"ds-card__image ds-card__image--featured\" style=\"background: #5d2661;\"><h1 class=\"featured-card-heading\">Special Offers</h1></div><div class=\"card-content\"><h2 class=\"card-title\">Special Offers</h2><p class=\"card-description\">Save big with limited time offers, available now for your device</p></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-2",
+      "name": "Microsoft",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Microsoft\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Microsoft\" src=\"https://marketplace.uds.lenovo.com/media/microsoft_thumbnail.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Productivity</span></div><h2 class=\"card-title\">Microsoft products are a comprehensive suite of software and services designed to enhance productivity, creativity, and communication.</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-3",
+      "name": "McAfee",
+      "html": "<div class=\"ds-card ds-card-featured ds-card-featured--red theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"McAfee\"><div class=\"content-card-box\"><div class=\"ds-card__image ds-card__image--featured\" style=\"background: #c8102e;\"><img src=\"https://marketplace.uds.lenovo.com/media/mcafee_white_logo.svg\" alt=\"McAfee\" class=\"featured-card-logo\"></div><div class=\"card-content\"><h2 class=\"card-title\">McAfee</h2><p class=\"card-description\">Lenovo recommends McAfee - Comprehensive protection for your identity, privacy, devices and life online.</p></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-4",
+      "name": "Dropbox",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Dropbox\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Dropbox\" src=\"https://marketplace.uds.lenovo.com/media/dropbox_partner_thumbnail.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Storage</span></div><h2 class=\"card-title\">Dropbox brings everything—traditional files, cloud content, and web shortcuts—together in one place.</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-5",
+      "name": "Norton",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Norton\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Norton\" src=\"https://marketplace.uds.lenovo.com/media/norton_partner.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Privacy</span><span class=\"ds-chips ds-chips--sm\">Security</span></div><h2 class=\"card-title\">Cybersecurity solutions that protect against malware, online threats, and identity theft.</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-6",
+      "name": "CyberLink",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"CyberLink\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"CyberLink\" src=\"https://marketplace.uds.lenovo.com/media/cyberlink_partner.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Video editing</span></div><h2 class=\"card-title\">Award-Winning Video Editing, Photo Editing & Multimedia Software</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-7",
+      "name": "Foxit",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Foxit\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Foxit\" src=\"https://marketplace.uds.lenovo.com/media/foxit_partner.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Productivity</span></div><h2 class=\"card-title\">Powerful desktop PDF solutions to create and edit PDF documents and integrated with Foxit eSign.</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-8",
+      "name": "Absolute Security",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Absolute Security\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Absolute Security\" src=\"https://marketplace.uds.lenovo.com/media/Absolute_Partner_logo.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Anti-Theft</span><span class=\"ds-chips ds-chips--sm\">Security</span></div><h2 class=\"card-title\">Absolute keeps you connected and in control of your data and device.</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-9",
+      "name": "Google Workspace",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Google Workspace\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Google Workspace\" src=\"https://marketplace.uds.lenovo.com/media/google_workspace_partner.png\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Collaboration</span><span class=\"ds-chips ds-chips--sm\">Startups</span></div><h2 class=\"card-title\">Flexible, helpful business collaboration solutions for all the ways work is changing. Get access to business versions of Google Meet, Chat, Drive, Docs, Sheets, and more.</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-10",
+      "name": "Google Play Games",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Google Play Games\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Google Play Games\" src=\"https://marketplace.uds.lenovo.com/media/GooglePlayGames_Partner_thumbnail.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Entertainment</span><span class=\"ds-chips ds-chips--sm\">Free</span></div><h2 class=\"card-title\">Lenovo recommends Google Play Games. Play mobile and PC games, and get rewards from Google Play Points</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    },
+    {
+      "id": "card-11",
+      "name": "Liner",
+      "html": "<div class=\"ds-card ds-card-outline theme-uds-light\" tabindex=\"0\" role=\"region\" aria-label=\"Liner\"><div class=\"content-card-box\"><img class=\"ds-card__image\" alt=\"Liner\" src=\"https://marketplace.uds.lenovo.com/media/liner_lenovo_thumbnail.svg\"><div class=\"card-content\"><div class=\"card-category-container\"><span class=\"ds-chips ds-chips--sm\">Productivity</span><span class=\"ds-chips ds-chips--sm\">Research</span></div><h2 class=\"card-title\">AI search engine for academic research - explore concepts, find academic papers, get citations.</h2></div></div></div>",
+      "framework": "HTML5",
+      "category": "content"
+    }
+  ],
+  "navigation": [
+    {
+      "id": "nav-1",
+      "name": "Breadcrumbs",
+      "html": "<nav class=\"ds-breadcrumbs\" aria-label=\"Breadcrumbs\"><div class=\"ds-breadcrumbs__link--last\">Home</div></nav>",
+      "framework": "HTML5",
+      "category": "navigation"
+    }
+  ],
+  "modals": []
+}

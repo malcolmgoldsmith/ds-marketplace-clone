@@ -1,0 +1,198 @@
+/* Version Switcher Navigation Styles */
+
+.bf-version-switcher {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #2b3a4a;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.switcher-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.switcher-logo {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.switcher-tabs {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.tab-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn.active {
+  background: white;
+  color: #2b3a4a;
+  border-color: white;
+}
+
+.tab-btn.compare-btn {
+  background: linear-gradient(135deg, #5d2661, #c8102e);
+  border-color: transparent;
+}
+
+.tab-btn.compare-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.switcher-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.countdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.countdown-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background: #c8102e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reset-btn:hover {
+  background: #a00d25;
+  transform: translateY(-2px);
+}
+
+/* Main content padding to account for fixed nav */
+.bf-main-content {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+/* Version content containers */
+.version-content {
+  display: none;
+}
+
+.version-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Notification */
+.version-notification {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background: #2b3a4a;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+
+.version-notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .switcher-container {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+  }
+
+  .switcher-tabs {
+    order: 3;
+    flex: 100%;
+    margin-top: 12px;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .switcher-logo {
+    font-size: 16px;
+  }
+
+  .switcher-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .countdown-toggle {
+    font-size: 12px;
+  }
+
+  .reset-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .bf-main-content {
+    padding-top: 140px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

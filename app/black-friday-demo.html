@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Demo - UDS Marketplace</title>
+
+    <!-- Design System Styles -->
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Black Friday Styles -->
+    <link rel="stylesheet" href="css/black-friday-common.css">
+    <link rel="stylesheet" href="css/version-switcher.css">
+    <link rel="stylesheet" href="css/black-friday-v1.css">
+    <link rel="stylesheet" href="css/black-friday-v2.css">
+    <link rel="stylesheet" href="css/black-friday-v3.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background: #f7f9fa;
+        }
+
+        /* Hero Banner Styles */
+        .image__container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .banner__img--header {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Product Cards Styles */
+        .product-grid {
+            max-width: 1440px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 27px;
+            justify-content: center;
+        }
+
+        .ds-card {
+            width: 352px;
+            max-width: 100%;
+            box-sizing: border-box;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Product Grid */
+        @media (max-width: 1200px) {
+            .product-grid {
+                gap: 20px;
+            }
+
+            .ds-card {
+                width: calc(33.333% - 14px);
+                min-width: 280px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .product-grid {
+                gap: 16px;
+            }
+
+            .ds-card {
+                width: calc(50% - 8px);
+                min-width: 280px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .product-grid {
+                gap: 16px;
+                padding: 0 16px;
+            }
+
+            .ds-card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        .ds-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .ds-card-outline {
+            border: 1px solid #e0e0e0;
+        }
+
+        .ds-card .ds-card__image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ds-card .content-card-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ds-card .card-content {
+            padding: 20px;
+        }
+
+        .ds-card .card-category-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ds-card .ds-chips {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e8f4fd;
+            border-radius: 16px;
+            font-size: 12px;
+            color: #0066cc;
+            font-weight: 500;
+        }
+
+        .ds-card .card-title {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Featured Cards */
+        .ds-card-featured {
+            border: none;
+        }
+
+        .ds-card-featured .ds-card__image--featured {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .ds-card-featured .featured-card-heading {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+            text-align: center;
+        }
+
+        .ds-card-featured .featured-card-logo {
+            max-width: 200px;
+            max-height: 100px;
+            object-fit: contain;
+        }
+
+        .ds-card-featured .card-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 0;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #333;
+        }
+
+        .page-header p {
+            margin: 10px 0 0 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Responsive Page Header */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 16px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .page-header p {
+                font-size: 14px;
+            }
+        }
+
+        /* Responsive Banner */
+        @media (max-width: 768px) {
+            .image__container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Version Switcher Navigation -->
+    <div class="bf-version-switcher" id="versionSwitcher">
+        <div class="switcher-container">
+            <div class="switcher-logo">
+                🎯 Black Friday Demo
+            </div>
+
+            <div class="switcher-tabs">
+                <button class="tab-btn active" data-version="original">
+                    Original
+                </button>
+                <button class="tab-btn" data-version="v1">
+                    V1: Minimal
+                </button>
+                <button class="tab-btn" data-version="v2">
+                    V2: Standard
+                </button>
+                <button class="tab-btn" data-version="v3">
+                    V3: Deluxe
+                </button>
+            </div>
+
+            <div class="switcher-controls">
+                <label class="countdown-toggle">
+                    <input type="checkbox" id="liveCountdown" checked>
+                    <span>Live Countdown</span>
+                </label>
+                <button class="reset-btn" id="resetTimer">
+                    🔄 Reset Timer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="bf-main-content">
+
+        <!-- ORIGINAL VERSION (No Black Friday) -->
+        <div class="version-content" data-version-content="original">
+            <!-- Hero Banner -->
+            <div class="image__container">
+                <img class="banner__img--header" src="/assets/images/default_header.svg" alt="default_header Lenovo software & subscriptions marketplace">
+            </div>
+
+            <div class="page-header">
+                <h1>UDS Marketplace</h1>
+                <p>Original marketplace view (no Black Friday sale)</p>
+            </div>
+
+            <div class="product-grid" id="originalProducts">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+
+        <!-- VERSION 1: MINIMAL -->
+        <div class="version-content" data-version-content="v1">
+            <div id="v1-container"></div>
+            <div class="product-grid" id="v1-products">
+                <!-- V1 products will be loaded here -->
+            </div>
+        </div>
+
+        <!-- VERSION 2: STANDARD -->
+        <div class="version-content" data-version-content="v2">
+            <div id="v2-container"></div>
+            <div class="product-grid bf-v2-products-section" id="v2-products">
+                <!-- V2 products will be loaded here with countdown badges -->
+            </div>
+        </div>
+
+        <!-- VERSION 3: DELUXE -->
+        <div class="version-content" data-version-content="v3">
+            <div id="v3-container"></div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/load-products.js"></script>
+    <script src="js/countdown-timer.js"></script>
+    <script src="js/version-switcher.js"></script>
+    <script src="js/bf-carousel.js"></script>
+
+    <script>
+        // Initialize products on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load original products (standard white cards)
+            loadProducts('originalProducts', false);
+
+            // Load V1 products (standard cards for now, V1 banner will be added separately)
+            loadProducts('v1-products', false);
+
+            // Load V1 banner component
+            fetch('components/black-friday-v1.html')
+                .then(response => response.text())
+                .then(html => {
+                    const container = document.getElementById('v1-container');
+                    container.innerHTML = html;
+
+                    // Execute scripts manually (innerHTML doesn't execute scripts)
+                    const scripts = container.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        script.parentNode.replaceChild(newScript, script);
+                    });
+                })
+                .catch(err => console.error('Error loading V1 component:', err));
+
+            // Load V2 products (featured cards with countdown badges)
+            loadProducts('v2-products', {
+                useFeatured: true,
+                addCountdownBadge: true
+            });
+
+            // Load V2 banner component
+            fetch('components/black-friday-v2.html')
+                .then(response => response.text())
+                .then(html => {
+                    const container = document.getElementById('v2-container');
+                    container.innerHTML = html;
+
+                    // Execute scripts manually (innerHTML doesn't execute scripts)
+                    const scripts = container.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        script.parentNode.replaceChild(newScript, script);
+                    });
+                })
+                .catch(err => console.error('Error loading V2 component:', err));
+
+            // Load V3 component first, then load products
+            fetch('components/black-friday-v3.html')
+                .then(response => response.text())
+                .then(html => {
+                    const container = document.getElementById('v3-container');
+                    container.innerHTML = html;
+
+                    // Execute scripts manually (innerHTML doesn't execute scripts)
+                    const scripts = container.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        script.parentNode.replaceChild(newScript, script);
+                    });
+
+                    // Now load products after V3 component is loaded
+                    setTimeout(() => {
+                        // Load V3 carousel products (featured cards for carousel)
+                        loadProducts('v3-carousel-track', {
+                            useFeatured: true,
+                            addCountdownBadge: false
+                        });
+
+                        // Load V3 grid products (all products with featured)
+                        loadProducts('v3-products-grid', {
+                            useFeatured: true,
+                            addCountdownBadge: false
+                        });
+                    }, 100);
+                })
+                .catch(err => console.error('Error loading V3 component:', err));
+
+            console.log('✅ Black Friday Demo initialized');
+        });
+    </script>
+</body>
+</html>

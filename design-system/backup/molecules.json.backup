@@ -1,0 +1,7 @@
+{
+  "breadcrumbs": {
+    "name": "Breadcrumbs",
+    "html": "<ds-breadcrumbs _ngcontent-ng-c169640580=\"\" _nghost-ng-c3868803750=\"\"><nav _ngcontent-ng-c3868803750=\"\" class=\"theme-uds-light ds-breadcrumbs\" aria-label=\"Breadcrumbs\"><div _ngcontent-ng-c3868803750=\"\" class=\"ds-breadcrumbs__container ng-star-inserted\"><ol _ngcontent-ng-c3868803750=\"\" class=\"ds-breadcrumbs__list\"><!----><!----><!----></ol><div _ngcontent-ng-c3868803750=\"\" class=\"ds-breadcrumbs__link--last\"> Home </div></div><!----></nav></ds-breadcrumbs>",
+    "description": "Navigation breadcrumb trail"
+  }
+}
