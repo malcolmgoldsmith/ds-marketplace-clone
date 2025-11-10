@@ -3,76 +3,59 @@
    Lenovo UDS Marketplace
    =================================== */
 
-/* Header Styling - Match index page exactly using CSS variables */
-.ds-header {
-  background-color: rgb(var(--color-complementary-120)) !important;
+/* Ensure proper scrolling */
+html {
+  overflow-y: scroll;
+  height: auto;
 }
 
-.ds-header__container {
-  background-color: rgb(var(--color-complementary-120)) !important;
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
 }
 
-/* Header icon buttons - transparent background like index page */
-.ds-header__additional-button.ds-btn,
-.ds-header__additional-button.ds-btn--lg,
-.ds-header__additional-button.ds-btn--with-icon,
-.user-account-button.ds-btn {
+/* Header button transparency - buttons should have no background or border */
+.ds-header .ds-btn,
+.ds-header__additional-button {
+  background: transparent !important;
   background-color: transparent !important;
-  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ds-header .ds-btn:hover,
+.ds-header__additional-button:hover,
+button.ds-btn--with-icon:hover {
+  background-color: rgba(var(--daylight-20), 0.12) !important;
   border: none !important;
 }
 
-/* Hover state matching index page - subtle light blue tint */
-.ds-header__additional-button.ds-btn:hover,
-.ds-header__additional-button.ds-btn--lg:hover,
-.ds-header__additional-button.ds-btn--with-icon:hover,
-.user-account-button.ds-btn:hover,
-button.ds-btn--with-icon:hover {
-  background-color: rgba(var(--daylight-20), .12) !important;
-}
-
-/* Ensure SVG icons use CSS variable for white color */
+/* Ensure header icons are visible (white on dark background) */
 .ds-header__additional-button svg,
-.user-account-button svg,
-.ds-search__input + button svg {
+.ds-header .ds-btn svg,
+.ds-search__button svg {
   fill: rgb(var(--color-neutral-text-10)) !important;
   color: rgb(var(--color-neutral-text-10)) !important;
 }
 
-/* Search field styling to match index page */
-.ds-header__actions .ds-search--icon .ds-field__input,
-.ds-header__actions .ds-search--icon .ds-field__input:hover,
-.ds-header__actions .ds-search--icon .ds-field__input:focus {
-  background-color: rgb(var(--color-complementary-text-30)) !important;
-  color: rgb(var(--color-neutral-text-10)) !important;
-}
-
-/* Search button transparent background */
-.ds-search .ds-btn--with-icon {
-  background-color: transparent !important;
-  background: none !important;
-  border: none !important;
-  outline: none !important;
-}
-
-/* Remove border from search button on all states */
-.ds-search .ds-btn--with-icon:hover,
-.ds-search .ds-btn--with-icon:focus,
-.ds-search .ds-btn--with-icon:active {
-  border: none !important;
-  outline: none !important;
-}
-
 /* Layout */
 .settings-container {
-  min-height: calc(100vh - 200px);
   background: #f5f5f5;
-  padding: 40px 24px;
+  padding: 40px 0;
+  overflow: visible;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
 }
 
 .settings-content {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 /* Sections */
@@ -487,13 +470,19 @@ button.ds-btn--with-icon:hover {
   background: #333;
   color: #fff;
   padding: 32px 24px;
-  margin-top: 48px;
+  margin-top: auto;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .footer-content {
-  max-width: 1440px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .footer-links {
