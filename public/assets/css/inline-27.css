@@ -1,0 +1,23 @@
+[_nghost-ng-c2577740847] .ds-dropdown .ds-field__header { margin: 0px; }
+[_nghost-ng-c2577740847] .ds-field .ds-field__header { display: none; }
+[_nghost-ng-c2577740847] .subscription-start-date .ds-field .ds-field__header { display: block; }
+[_nghost-ng-c2577740847] input[type="number"] { appearance: textfield; }
+[_nghost-ng-c2577740847] input[type="number"]::-webkit-inner-spin-button { appearance: none; }
+.line-through[_ngcontent-ng-c2577740847] { text-decoration: line-through; }
+.shopping-cart__price-container[_ngcontent-ng-c2577740847] { color: rgb(74, 90, 111); font-size: 16px; font-weight: 400; }
+.grid-container[_ngcontent-ng-c2577740847] { display: grid; column-gap: 50px; grid-template-columns: 4fr minmax(105px, 1fr) minmax(80px, 2fr); }
+.shopping-cart__header[_ngcontent-ng-c2577740847] { padding-bottom: 10px; color: rgb(69, 87, 110); font-size: 13px; font-weight: 600; text-align: left; text-transform: uppercase; }
+.shopping-cart__list[_ngcontent-ng-c2577740847] { padding: 20px 0px 32px; border-top: 1px solid rgb(201, 209, 219); }
+.shopping-cart__header[_ngcontent-ng-c2577740847] .grid-item[_ngcontent-ng-c2577740847]:last-child { text-align: center; }
+.shopping-cart__title[_ngcontent-ng-c2577740847] { font-size: 20px; padding: 10px 0px; }
+.shopping-cart__variant[_ngcontent-ng-c2577740847] { font-size: 14px; }
+.shopping-cart__btn[_ngcontent-ng-c2577740847] { height: 30px; }
+.shopping-cart__action[_ngcontent-ng-c2577740847] { display: flex; flex-direction: column; align-items: center; gap: 20px; height: 100%; }
+.shopping-cart__warning[_ngcontent-ng-c2577740847] { display: flex; align-items: start; width: 310px; border: 1px solid rgb(184, 2, 14); font-size: 14px; margin-top: 26px; padding: 8px 5px; }
+.shopping-cart__warning-text[_ngcontent-ng-c2577740847] { line-height: 20px; margin-left: 5px; }
+.shopping-cart__img[_ngcontent-ng-c2577740847] { height: 1.5em; }
+.shopping-cart__partnership-reference-number[_ngcontent-ng-c2577740847] { vertical-align: super; font-size: 0.5em; }
+.grid-subscription-container[_ngcontent-ng-c2577740847] { display: flex; flex-direction: column; }
+.shopping-cart__subscription-start-date[_ngcontent-ng-c2577740847] { padding: 20px 0px 32px; border-top: 1px solid rgb(201, 209, 219); }
+.subscription-start-date[_ngcontent-ng-c2577740847] { width: 220px; }
+.shopping-cart__subscription-start-date-des[_ngcontent-ng-c2577740847] { padding-top: 10px; }

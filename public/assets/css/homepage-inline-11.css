@@ -1,0 +1,9 @@
+.image__container[_ngcontent-ng-c3560008840] { width: calc(100% + 336px); margin-left: -168px; display: block; overflow: hidden; border: none; }
+@media screen and (width <= 1065px) {
+  .image__container[_ngcontent-ng-c3560008840] { width: calc(100% + 100px); margin-left: -50px; }
+}
+@media screen and (width <= 600px) {
+  .image__container[_ngcontent-ng-c3560008840] { width: calc(100% + 40px); margin-left: -20px; }
+}
+.banner__img--header[_ngcontent-ng-c3560008840], .banner__img--footer[_ngcontent-ng-c3560008840] { width: 100%; height: auto; }
+.banner__img--footer[_ngcontent-ng-c3560008840] { margin-top: 30px; }

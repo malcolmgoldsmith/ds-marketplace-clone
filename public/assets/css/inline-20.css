@@ -1,0 +1,24 @@
+[_nghost-ng-c3858546573] .order-summary__btn .ds-icon path { fill: rgb(255, 255, 255); }
+[_nghost-ng-c3858546573] .ds-stepper-default-container .ds-stepper { background-color: unset; box-shadow: unset; }
+[_nghost-ng-c3858546573] .ds-stepper-default-container .ds-nav-bar--horizontal { justify-content: center; border-bottom: unset; }
+[_nghost-ng-c3858546573] .shopping-cart .ds-stepper__content { height: auto; padding: 28px 0px; border-bottom: none; }
+[_nghost-ng-c3858546573] .ds-step-title { display: none; }
+.shopping-cart__payment--hidden[_ngcontent-ng-c3858546573] { display: none; }
+.shopping-cart[_ngcontent-ng-c3858546573] { display: flex; flex-direction: column; padding: 30px 0px; }
+.shopping-cart__container[_ngcontent-ng-c3858546573] { display: flex; justify-content: space-between; gap: 160px; }
+.shopping-cart__container[_ngcontent-ng-c3858546573] app-shopping-cart-list[_ngcontent-ng-c3858546573] { flex: 1 1 0%; }
+.shopping-cart__link[_ngcontent-ng-c3858546573] { color: rgb(1, 112, 224); font-size: 14px; text-decoration: none; cursor: pointer; }
+.shopping-cart__link[_ngcontent-ng-c3858546573]:visited { color: rgb(1, 112, 224); }
+.shopping-cart__link[_ngcontent-ng-c3858546573]:hover { text-decoration: underline; }
+.shopping-cart__title[_ngcontent-ng-c3858546573] { font-size: 28px; margin: 20px 0px; }
+.shopping-cart__text[_ngcontent-ng-c3858546573] { display: flex; justify-content: center; align-items: center; text-align: center; height: 50vh; font-size: 24px; line-height: 36px; }
+.shopping-cart__payment-title[_ngcontent-ng-c3858546573] { font-size: 14px; font-weight: 700; line-height: 20px; letter-spacing: 0.04px; }
+.shopping-cart__icon[_ngcontent-ng-c3858546573] { display: inline-block; width: 5px; height: 12px; margin-right: 5px; background-image: url("arrow-left.0753077eba3b62de.svg"); }
+.shopping-cart__partnership-description[_ngcontent-ng-c3858546573] { margin-top: 20px; font-size: 12px; line-height: 18px; }
+.shopping-cart__partnership-reference-number[_ngcontent-ng-c3858546573] { vertical-align: super; font-size: 8px; }
+@media screen and (width <= 1264px) {
+  .shopping-cart__container[_ngcontent-ng-c3858546573] { gap: 80px; }
+}
+@media screen and (width <= 900px) {
+  .shopping-cart__container[_ngcontent-ng-c3858546573] { flex-direction: column; }
+}

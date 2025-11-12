@@ -1,0 +1,19 @@
+.ds-nav-bar-item[_ngcontent-ng-c3223648034] { display: flex; }
+.ds-nav-bar-item--horizontal[_ngcontent-ng-c3223648034] { align-items: center; padding: 0px; margin: 0px 4px 0px 0px; }
+.ds-nav-bar-item--horizontal[_ngcontent-ng-c3223648034] .ds-nav-bar-flex-container[_ngcontent-ng-c3223648034] { align-items: center; }
+.ds-nav-bar-item--horizontal[_ngcontent-ng-c3223648034] .ds-nav-bar-item__text[_ngcontent-ng-c3223648034] { margin: 0px 8px 0px 0px; }
+.ds-nav-bar-item--horizontal[_ngcontent-ng-c3223648034] .ds-nav-bar-item__title[_ngcontent-ng-c3223648034] { text-wrap: nowrap; margin: 0px; }
+.ds-nav-bar-item--progress[_ngcontent-ng-c3223648034] .ds-nav-bar-item__icon[_ngcontent-ng-c3223648034] { color: rgb(var(--color-success-30)); }
+.ds-nav-bar-item--progress[_ngcontent-ng-c3223648034] .ds-nav-bar-item__line--active[_ngcontent-ng-c3223648034] { border: 1px solid rgb(var(--color-success-30)); }
+.ds-nav-bar-item__title[_ngcontent-ng-c3223648034] { font: 14px / 18px Lato, sans-serif, Helvetica, Arial; }
+.ds-nav-bar-item__title--active[_ngcontent-ng-c3223648034] { text-shadow: 0.5px 0px 0px; }
+.ds-nav-bar-item__subtitle[_ngcontent-ng-c3223648034] { font: 12px / 18px Lato, sans-serif, Helvetica, Arial; margin: 0px; }
+.ds-nav-bar-item__separator[_ngcontent-ng-c3223648034] { display: flex; flex-direction: column; align-items: center; margin: 0px 4px 0px 0px; }
+.ds-nav-bar-item__icon[_ngcontent-ng-c3223648034] { color: rgb(var(--color-primary-50)); }
+.ds-nav-bar-flex-container[_ngcontent-ng-c3223648034] { display: flex; }
+.ds-nav-bar-item__icon-illustration[_ngcontent-ng-c3223648034] { padding: 16px; border-radius: 8px; background: rgb(var(--color-neutral-30)); color: rgb(var(--color-neutral-60)); }
+.ds-nav-bar-item__icon-illustration.ds-nav-bar-item__title--active[_ngcontent-ng-c3223648034] { background: rgb(var(--color-primary-text-10)); color: rgb(var(--color-primary-40)); }
+.ds-nav-bar-item__icon-illustration.ds-nav-bar-item__title--inactive[_ngcontent-ng-c3223648034] { background: rgb(var(--color-primary-40)); color: rgb(var(--color-primary-10)); }
+.ds-nav-bar-item__line[_ngcontent-ng-c3223648034] { border: 1px dashed rgb(var(--color-complementary-50)); }
+.ds-nav-bar-item__line--horizontal[_ngcontent-ng-c3223648034] { width: 54px; height: 1px; }
+.ds-nav-bar-item__line--vertical[_ngcontent-ng-c3223648034] { width: 1px; height: 54px; }
